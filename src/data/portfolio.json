@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Mehedi Hasan Opu | Motion Graphics Designer",
+    "title": "Mahedi Hasan Opu | Motion Graphics Designer",
     "description": "Portfolio of Mehedi Hasan Opu, a motion graphics designer crafting brand animations, title sequences, explainers and 3D visuals that move people.",
     "logo": "OPU",
     "url": "",
@@ -12,12 +12,12 @@
   },
 
   "profile": {
-    "firstName": "Mehedi Hasan",
+    "firstName": "Mahedi Hasan",
     "lastName": "Opu",
     "greeting": "Hello! I'm",
     "photo": "/images/avatar.svg",
-    "location": "Dhaka, Bangladesh",
-    "email": "hello@example.com",
+    "location": "Sylhet, Bangladesh",
+    "email": "mahide.hasan0501@gmail.com",
     "resume": "",
     "headline": {
       "prefix": "A",
@@ -27,7 +27,7 @@
   },
 
   "loader": {
-    "brand": "Mehedi Hasan Opu",
+    "brand": "Mahedi Hasan Opu",
     "marquee": ["Motion Designer", "Visual Storyteller"]
   },
 
