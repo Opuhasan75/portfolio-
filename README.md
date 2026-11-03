@@ -55,6 +55,7 @@ Replace `public/images/avatar.svg` or point `profile.photo` at your own image. I
 | `environmentMap`, `environmentIntensity` | HDR lighting for the model |
 | `lights.keyColor`, `lights.keyIntensity`, `lights.screenColor` | Key light and monitor-glow light colours |
 | `monitor.screenColor`, `monitor.glowColor` | Colour of the desk monitor and its flicker |
+| `colors` | Colours of the character: `skin`, `hair`, `eyebrows`, `shirt`, `pants`, `shoes`, `soles`. An empty value keeps the model's original grey |
 | `headTracking` | Whether the head follows the mouse |
 | `camera.fov`, `camera.position`, `camera.zoom` | Framing of the character |
 

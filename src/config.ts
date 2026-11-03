@@ -102,6 +102,7 @@ export interface PortfolioConfig {
     environmentMap: string;
     environmentIntensity: number;
     headTracking: boolean;
+    colors: Record<string, string>;
     lights: {
       keyColor: string;
       keyIntensity: number;

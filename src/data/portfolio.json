@@ -1,8 +1,8 @@
 {
   "site": {
     "title": "Mehedi Hasan Opu | Motion Graphics Designer",
-    "description": "Portfolio of Opu Hasan, a motion graphics designer crafting brand animations, title sequences, explainers and 3D visuals that move people.",
-    "logo": "OH",
+    "description": "Portfolio of Mehedi Hasan Opu, a motion graphics designer crafting brand animations, title sequences, explainers and 3D visuals that move people.",
+    "logo": "OPU",
     "url": "",
     "theme": {
       "accentColor": "#c2a4ff",
@@ -12,8 +12,8 @@
   },
 
   "profile": {
-    "firstName": "Opu",
-    "lastName": "Hasan",
+    "firstName": "Mehedi Hasan",
+    "lastName": "Opu",
     "greeting": "Hello! I'm",
     "photo": "/images/avatar.svg",
     "location": "Dhaka, Bangladesh",
@@ -27,8 +27,8 @@
   },
 
   "loader": {
-    "brand": "Opu Hasan",
-    "marquee": ["Motion Designer", "3D Animator", "Visual Storyteller"]
+    "brand": "Mehedi Hasan Opu",
+    "marquee": ["Motion Designer", "Visual Storyteller"]
   },
 
   "about": {
@@ -220,6 +220,15 @@
     "environmentMap": "/models/char_enviorment.hdr",
     "environmentIntensity": 0.64,
     "headTracking": true,
+    "colors": {
+      "skin": "#a46d4f",
+      "hair": "#120d0b",
+      "eyebrows": "#120d0b",
+      "shirt": "#a8102b",
+      "pants": "#1c1c24",
+      "shoes": "#ece9e4",
+      "soles": "#2a2a2a"
+    },
     "lights": {
       "keyColor": "#c7a9ff",
       "keyIntensity": 1,

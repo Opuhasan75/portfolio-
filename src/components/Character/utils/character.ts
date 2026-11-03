@@ -2,6 +2,7 @@ import * as THREE from "three";
 import { DRACOLoader, GLTF, GLTFLoader } from "three-stdlib";
 import { setCharTimeline, setAllTimeline } from "../../utils/GsapScroll";
 import { decryptFile } from "./decrypt";
+import applyAvatarColors from "./avatarColors";
 import { config } from "../../../config";
 
 const { avatar } = config;
@@ -31,6 +32,7 @@ const setCharacter = (
           modelUrl,
           async (gltf) => {
             character = gltf.scene;
+            applyAvatarColors(character, avatar.colors);
             await renderer.compileAsync(character, camera, scene);
             character.traverse((child: any) => {
               if (child.isMesh) {
