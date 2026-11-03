@@ -1,6 +1,6 @@
 {
   "site": {
-    "title": "Opu Hasan | Motion Graphics Designer & 3D Animator",
+    "title": "Mehedi Hasan Opu | Motion Graphics Designer",
     "description": "Portfolio of Opu Hasan, a motion graphics designer crafting brand animations, title sequences, explainers and 3D visuals that move people.",
     "logo": "OH",
     "url": "",
@@ -208,18 +208,7 @@
     "enabled": true,
     "opponentName": "Opu",
     "opponentLabel": "Chess Engine",
-    "engineDepth": 12,
-    "chat": {
-      "enabled": true,
-      "title": "💬 Talk with me",
-      "greeting": "Hey there! I'm Opu 👋 Ask me anything about my motion work, projects or tools.",
-      "placeholder": "Ask me anything...",
-      "extraFacts": [
-        "Languages: Bengali and English.",
-        "Open to freelance projects, studio collaborations and full-time roles.",
-        "Interests: motion design, 3D, film, music and chess."
-      ]
-    }
+    "engineDepth": 12
   },
 
   "avatar": {

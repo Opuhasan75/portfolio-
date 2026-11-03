@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 import { Chess, Square, PieceSymbol, Color } from "chess.js";
 import RedoxChessEngine from "../utils/redoxchessEngine";
 import { config } from "../config";
-import { SYSTEM_PROMPT } from "../utils/chatPersona";
 import "./Play.css";
 
-const { opponentName, opponentLabel, engineDepth, chat } = config.play;
+const { opponentName, opponentLabel, engineDepth } = config.play;
 
 // Piece SVG components matching chess.com style with custom colors
 const PIECES: Record<string, string> = {
@@ -34,13 +33,6 @@ interface MoveHistory {
   san: string;
 }
 
-interface ChatMessage {
-  role: 'user' | 'assistant' | 'system';
-  content: string;
-}
-
-// API key is handled server-side in api/chat.js
-
 const Play = () => {
   const [game, setGame] = useState(new Chess());
   const [selectedSquare, setSelectedSquare] = useState<Square | null>(null);
@@ -55,12 +47,6 @@ const Play = () => {
   const [engineThinking, setEngineThinking] = useState(false);
   const redoxchessRef = useRef<RedoxChessEngine | null>(null);
 
-  // Chat state
-  const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
-    { role: 'assistant', content: chat.greeting }
-  ]);
-  const [chatInput, setChatInput] = useState('');
-  const [isTyping, setIsTyping] = useState(false);
 
   const files = boardFlipped ? ['h', 'g', 'f', 'e', 'd', 'c', 'b', 'a'] : ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h'];
   const ranks = boardFlipped ? ['1', '2', '3', '4', '5', '6', '7', '8'] : ['8', '7', '6', '5', '4', '3', '2', '1'];
@@ -200,64 +186,6 @@ const Play = () => {
     setBoardFlipped(!boardFlipped);
   };
 
-  const sendMessage = async () => {
-    if (!chatInput.trim()) return;
-
-    const userMessage: ChatMessage = { role: 'user', content: chatInput };
-    setChatMessages(prev => [...prev, userMessage]);
-    setChatInput('');
-    setIsTyping(true);
-
-    try {
-      const messages = [
-        { role: 'system', content: SYSTEM_PROMPT },
-        ...chatMessages.filter(m => m.role !== 'system').map(m => ({
-          role: m.role,
-          content: m.content
-        })),
-        { role: 'user', content: chatInput }
-      ];
-
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          messages: messages,
-        }),
-      });
-
-      const data = await response.json();
-
-      if (data.choices && data.choices[0]?.message?.content) {
-        const assistantMessage: ChatMessage = {
-          role: 'assistant',
-          content: data.choices[0].message.content
-        };
-        setChatMessages(prev => [...prev, assistantMessage]);
-      } else {
-        throw new Error('Invalid response');
-      }
-    } catch (error) {
-      console.error('Chat error:', error);
-      const errorMessage: ChatMessage = {
-        role: 'assistant',
-        content: 'Sorry, having some connection issues. Try again? 😅'
-      };
-      setChatMessages(prev => [...prev, errorMessage]);
-    } finally {
-      setIsTyping(false);
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
-      e.preventDefault();
-      sendMessage();
-    }
-  };
-
   const renderPiece = (piece: { type: PieceSymbol; color: Color } | null) => {
     if (!piece) return null;
     const key = `${piece.color}${piece.type.toUpperCase()}`;
@@ -304,43 +232,6 @@ const Play = () => {
       </div>
 
       <div className="chess-container">
-        {/* Chat Panel - Left Side */}
-        {chat.enabled && (
-        <div className="chat-panel">
-          <div className="chat-header">
-            <span className="chat-title">{chat.title}</span>
-          </div>
-          <div className="chat-messages">
-            {chatMessages.map((msg, index) => (
-              <div key={index} className={`chat-message ${msg.role}`}>
-                <div className="message-content">{msg.content}</div>
-              </div>
-            ))}
-            {isTyping && (
-              <div className="chat-message assistant">
-                <div className="message-content typing">
-                  <span></span><span></span><span></span>
-                </div>
-              </div>
-            )}
-          </div>
-          <div className="chat-input-area">
-            <input
-              type="text"
-              className="chat-input"
-              placeholder={chat.placeholder}
-              value={chatInput}
-              onChange={(e) => setChatInput(e.target.value)}
-              onKeyPress={handleKeyPress}
-              data-cursor="disable"
-            />
-            <button className="chat-send-btn" onClick={sendMessage} data-cursor="disable">
-              ➤
-            </button>
-          </div>
-        </div>
-        )}
-
         {/* Board Section with Player Labels */}
         <div className="chess-board-section">
           {/* Opponent Info - Top of Board */}

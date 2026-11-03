@@ -1,6 +1,6 @@
 # Opu Hasan: Motion Graphics Portfolio
 
-An interactive 3D portfolio for a motion graphics designer, built with **React**, **TypeScript**, **Three.js** and **GSAP**. It has a scroll-animated 3D avatar, smooth scrolling, a project gallery with hover video previews, and a "Play With Me" chess page with an AI chat assistant.
+An interactive 3D portfolio for a motion graphics designer, built with **React**, **TypeScript**, **Three.js** and **GSAP**. It has a scroll-animated 3D avatar, smooth scrolling, a project gallery with hover video previews, and a "Play With Me" chess page.
 
 **All content lives in one file: [`src/data/portfolio.json`](src/data/portfolio.json).** Edit it, save, and the whole site updates. You don't need to touch any component code.
 
@@ -15,8 +15,6 @@ npm install
 npm run dev      # local dev server
 npm run build    # production build -> dist/
 ```
-
-To enable the AI chat on `/play`, copy `.env.example` to `.env` and set `GROQ_API_KEY` (also add it in your Vercel project settings).
 
 ---
 
@@ -34,7 +32,7 @@ To enable the AI chat on `/play`, copy `.env.example` to `.env` and set `GROQ_AP
 | `techStack` | Toolkit section. A flat list that is arranged into a pyramid automatically |
 | `socials` | Social links. Empty `url` hides a link. `showInSidebar` shows it in the left icon bar. Icons: `behance`, `dribbble`, `instagram`, `linkedin`, `vimeo`, `youtube`, `x`, `facebook`, `github`, `medium`, `email`, `website` |
 | `callToAction` | "Play With Me" / "Hire Me" buttons. An empty `hire.url` falls back to LinkedIn, then email |
-| `play` | Chess page and AI chat: opponent name/label, engine depth, chat greeting and extra facts. The chat persona is generated from this whole file |
+| `play` | Chess page: `enabled`, opponent name/label and engine depth (search strength) |
 | `avatar` | The 3D character (see below) |
 
 ### Project images and videos
@@ -73,7 +71,7 @@ Then set `avatar.decryptionKey` to the same key.
 
 ## Deploying
 
-The project is set up for **Vercel** (`vercel.json` handles SPA routing and the `/api/chat` serverless function). Import the repo in Vercel, add `GROQ_API_KEY`, and deploy.
+The project is set up for **Vercel** (`vercel.json` handles SPA routing). Import the repo in Vercel and deploy. No environment variables are needed.
 
 ---
 

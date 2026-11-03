@@ -92,13 +92,6 @@ export interface PortfolioConfig {
     opponentName: string;
     opponentLabel: string;
     engineDepth: number;
-    chat: {
-      enabled: boolean;
-      title: string;
-      greeting: string;
-      placeholder: string;
-      extraFacts: string[];
-    };
   };
   avatar: {
     enabled: boolean;
