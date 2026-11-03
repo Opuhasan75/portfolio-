@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b080c"/>
+      <stop offset="1" stop-color="#00695c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".8" cy=".3" r=".6">
+      <stop offset="0" stop-color="#64ffda" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#64ffda" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#ffffff" opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <rect x="1000" y="490" width="44" height="160" rx="10" fill="#64ffda" opacity=".5"/><rect x="1070" y="390" width="44" height="260" rx="10" fill="#64ffda" opacity=".5"/><rect x="1140" y="450" width="44" height="200" rx="10" fill="#64ffda" opacity=".5"/><rect x="1210" y="310" width="44" height="340" rx="10" fill="#64ffda" opacity=".5"/><rect x="1280" y="370" width="44" height="280" rx="10" fill="#64ffda" opacity=".5"/><rect x="1350" y="250" width="44" height="400" rx="10" fill="#64ffda" opacity=".5"/>
+  <text x="120" y="470" font-family="Geist, Inter, Helvetica, Arial, sans-serif" font-size="120" font-weight="700" fill="#ffffff">FinFlow</text>
+  <text x="124" y="550" font-family="Geist, Inter, Helvetica, Arial, sans-serif" font-size="40" fill="#64ffda" letter-spacing="2">2D Explainer</text>
+</svg>

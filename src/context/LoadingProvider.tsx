@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import Loading from "../components/Loading";
+import { showAvatar } from "../config";
 
 interface LoadingType {
   isLoading: boolean;
@@ -16,11 +17,8 @@ interface LoadingType {
 export const LoadingContext = createContext<LoadingType | null>(null);
 
 export const LoadingProvider = ({ children }: PropsWithChildren) => {
-  const [isLoading, setIsLoading] = useState(() => {
-    // Skip loading on mobile
-    if (window.innerWidth <= 768) return false;
-    return true;
-  });
+  // The loader tracks the 3D avatar download, so skip it when there is no avatar
+  const [isLoading, setIsLoading] = useState(showAvatar);
   const [loading, setLoading] = useState(0);
 
   const value = {
@@ -29,8 +27,8 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
     setLoading,
   };
   useEffect(() => {
-    // Auto-start animations on mobile since there's no 3D model
-    if (window.innerWidth <= 768) {
+    // Auto-start animations when there's no 3D model to wait for
+    if (!showAvatar()) {
       import("../components/utils/initialFX").then((module) => {
         if (module.initialFX) {
           setTimeout(() => {

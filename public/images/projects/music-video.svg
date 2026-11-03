@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b080c"/>
+      <stop offset="1" stop-color="#283593"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".8" cy=".3" r=".6">
+      <stop offset="0" stop-color="#8c9eff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#8c9eff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#ffffff" opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <rect x="980" y="300" width="380" height="18" rx="9" fill="#8c9eff" opacity=".45"/><rect x="980" y="355" width="300" height="18" rx="9" fill="#8c9eff" opacity=".45"/><rect x="980" y="410" width="420" height="18" rx="9" fill="#8c9eff" opacity=".45"/><rect x="980" y="465" width="240" height="18" rx="9" fill="#8c9eff" opacity=".45"/><rect x="980" y="520" width="340" height="18" rx="9" fill="#8c9eff" opacity=".45"/><rect x="980" y="575" width="200" height="18" rx="9" fill="#8c9eff" opacity=".45"/>
+  <text x="120" y="470" font-family="Geist, Inter, Helvetica, Arial, sans-serif" font-size="120" font-weight="700" fill="#ffffff">Midnight</text>
+  <text x="124" y="550" font-family="Geist, Inter, Helvetica, Arial, sans-serif" font-size="40" fill="#8c9eff" letter-spacing="2">Echoes · Music Video</text>
+</svg>

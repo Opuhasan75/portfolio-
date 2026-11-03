@@ -1,6 +1,6 @@
 import { MdArrowOutward, MdCopyright } from "react-icons/md";
 import "./styles/Contact.css";
-import { config } from "../config";
+import { activeSocials, config, fullName } from "../config";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
@@ -59,71 +59,38 @@ const Contact = () => {
   return (
     <div className="contact-section section-container" id="contact">
       <div className="contact-container">
-        <h3>{config.developer.fullName}</h3>
+        <h3>{fullName}</h3>
         <div className="contact-flex">
           <div className="contact-box">
             <h4>Email</h4>
             <p>
-              <a href={`mailto:${config.contact.email}`} data-cursor="disable">
-                {config.contact.email}
+              <a href={`mailto:${config.profile.email}`} data-cursor="disable">
+                {config.profile.email}
               </a>
             </p>
             <h4>Location</h4>
             <p>
-              <span>{config.social.location}</span>
+              <span>{config.profile.location}</span>
             </p>
           </div>
           <div className="contact-box">
             <h4>Social</h4>
-            <a
-              href={config.contact.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Github <MdArrowOutward />
-            </a>
-            <a
-              href={config.contact.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Linkedin <MdArrowOutward />
-            </a>
-            <a
-              href={config.contact.twitter}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Twitter <MdArrowOutward />
-            </a>
-            <a
-              href={config.contact.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Facebook <MdArrowOutward />
-            </a>
-            <a
-              href={config.contact.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-cursor="disable"
-              className="contact-social"
-            >
-              Instagram <MdArrowOutward />
-            </a>
+            {activeSocials.map((social) => (
+              <a
+                key={social.name}
+                href={social.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor="disable"
+                className="contact-social"
+              >
+                {social.name} <MdArrowOutward />
+              </a>
+            ))}
           </div>
           <div className="contact-box">
             <h2>
-              Designed and Developed <br /> by <span>{config.developer.fullName}</span>
+              Designed and Developed <br /> by <span>{fullName}</span>
             </h2>
             <h5>
               <MdCopyright /> {new Date().getFullYear()}

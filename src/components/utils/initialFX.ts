@@ -1,6 +1,7 @@
 import { TextSplitter } from "../../utils/textSplitter";
 import gsap from "gsap";
 import { lenis } from "../Navbar";
+import { config } from "../../config";
 
 export function initialFX() {
   document.body.style.overflowY = "auto";
@@ -9,7 +10,7 @@ export function initialFX() {
   }
   document.getElementsByTagName("main")[0].classList.add("main-active");
   gsap.to("body", {
-    backgroundColor: "#0b080c",
+    backgroundColor: config.site.theme.backgroundColor,
     duration: 0.5,
     delay: 1,
   });

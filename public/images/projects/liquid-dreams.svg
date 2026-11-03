@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b080c"/>
+      <stop offset="1" stop-color="#1565c0"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".8" cy=".3" r=".6">
+      <stop offset="0" stop-color="#82b1ff" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#82b1ff" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#ffffff" opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <g transform="translate(1180 450)" fill="none" stroke="#82b1ff" stroke-width="4" opacity=".55"><path d="M0-170 147-85V85L0 170-147 85V-85Z"/><path d="M0-170V0M0 0 147-85M0 0-147-85M0 0V170"/></g>
+  <text x="120" y="470" font-family="Geist, Inter, Helvetica, Arial, sans-serif" font-size="120" font-weight="700" fill="#ffffff">Liquid Dreams</text>
+  <text x="124" y="550" font-family="Geist, Inter, Helvetica, Arial, sans-serif" font-size="40" fill="#82b1ff" letter-spacing="2">3D Loop · Blender · Houdini</text>
+</svg>

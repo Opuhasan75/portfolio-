@@ -1,18 +1,16 @@
 import { PropsWithChildren } from "react";
 import "./styles/Landing.css";
-import { config } from "../config";
+import { config, fullName } from "../config";
 
 const Landing = ({ children }: PropsWithChildren) => {
-  const nameParts = config.developer.fullName.split(" ");
-  const firstName = nameParts[0] || config.developer.name;
-  const lastName = nameParts.slice(1).join(" ") || "";
+  const { firstName, lastName, greeting, headline, photo } = config.profile;
 
   return (
     <>
       <div className="landing-section" id="landingDiv">
         <div className="landing-container">
           <div className="landing-intro">
-            <h2>Hello! I'm</h2>
+            <h2>{greeting}</h2>
             <h1>
               {firstName.toUpperCase()}
               {' '}
@@ -21,24 +19,32 @@ const Landing = ({ children }: PropsWithChildren) => {
             </h1>
           </div>
           <div className="landing-info">
-            <h3>An</h3>
+            <h3>{headline.prefix}</h3>
             <h2 className="landing-info-h2">
-              <div className="landing-h2-1">AI Engineer</div>
+              <div className="landing-h2-1">{headline.accent[0]}</div>
+              {headline.accent[1] && (
+                <div className="landing-h2-2">{headline.accent[1]}</div>
+              )}
             </h2>
             <h2>
-              <div className="landing-h2-info">Full-Stack Developer</div>
+              <div className="landing-h2-info">{headline.main[0]}</div>
+              {headline.main[1] && (
+                <div className="landing-h2-info-1">{headline.main[1]}</div>
+              )}
             </h2>
           </div>
           {/* Mobile photo - shows only on mobile when 3D character is hidden */}
-          <div className="mobile-photo">
-            <img
-              src="/images/mypicnbg.png"
-              alt="Redoyanul Haque"
-              loading="eager"
-              fetchPriority="high"
-              decoding="async"
-            />
-          </div>
+          {photo && (
+            <div className="mobile-photo">
+              <img
+                src={photo}
+                alt={fullName}
+                loading="eager"
+                fetchPriority="high"
+                decoding="async"
+              />
+            </div>
+          )}
         </div>
         {children}
       </div>

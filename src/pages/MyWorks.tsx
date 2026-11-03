@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { config } from "../config";
+import { config, isExternalLink } from "../config";
 import "./MyWorks.css";
 
 const MyWorks = () => {
@@ -17,10 +17,10 @@ const MyWorks = () => {
 
       <div className="myworks-grid">
         {config.projects.map((project, index) => {
-          const isInternalLink = Boolean(project.link?.startsWith("/"));
+          const isInternalLink = Boolean(project.link) && !isExternalLink(project.link);
           const cardContent = (
             <>
-              <div className="myworks-card-number">0{index + 1}</div>
+              <div className="myworks-card-number">{String(index + 1).padStart(2, "0")}</div>
               <div className="myworks-card-image">
                 <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
               </div>
@@ -28,7 +28,7 @@ const MyWorks = () => {
                 <h3>{project.title}</h3>
                 <p className="myworks-card-category">{project.category}</p>
                 <p className="myworks-card-description">{project.description}</p>
-                <p className="myworks-card-tech">{project.technologies}</p>
+                <p className="myworks-card-tech">{project.tech.join(", ")}</p>
               </div>
             </>
           );
@@ -37,7 +37,7 @@ const MyWorks = () => {
             return (
               <Link
                 className="myworks-card"
-                key={project.id}
+                key={project.title}
                 data-cursor="disable"
                 to={project.link}
               >
@@ -49,7 +49,7 @@ const MyWorks = () => {
           return (
             <a
               className="myworks-card"
-              key={project.id}
+              key={project.title}
               data-cursor="disable"
               href={project.link || undefined}
               target={project.link ? "_blank" : undefined}

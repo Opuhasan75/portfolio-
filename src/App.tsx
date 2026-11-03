@@ -9,6 +9,7 @@ const MainContainer = lazy(() => import("./components/MainContainer"));
 const MyWorks = lazy(() => import("./pages/MyWorks"));
 const Play = lazy(() => import("./pages/Play"));
 import { LoadingProvider } from "./context/LoadingProvider";
+import { config } from "./config";
 
 const App = () => {
   return (
@@ -36,14 +37,16 @@ const App = () => {
             </Suspense>
           }
         />
-        <Route
-          path="/play"
-          element={
-            <Suspense fallback={<div>Loading...</div>}>
-              <Play />
-            </Suspense>
-          }
-        />
+        {config.play.enabled && (
+          <Route
+            path="/play"
+            element={
+              <Suspense fallback={<div>Loading...</div>}>
+                <Play />
+              </Suspense>
+            }
+          />
+        )}
       </Routes>
       <Analytics />
       <SpeedInsights />

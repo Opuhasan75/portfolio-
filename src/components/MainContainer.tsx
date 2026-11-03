@@ -11,18 +11,16 @@ import Work from "./Work";
 import TechStackNew from "./TechStackNew";
 import CallToAction from "./CallToAction";
 import setSplitText from "./utils/splitText";
+import { showAvatar } from "../config";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
-  const [isDesktopView, setIsDesktopView] = useState<boolean>(
-    window.innerWidth > 1024
-  );
-  const [isMobile] = useState<boolean>(window.innerWidth <= 768);
+  const [isDesktopView, setIsDesktopView] = useState<boolean>(showAvatar);
   const [shouldRenderCharacter, setShouldRenderCharacter] = useState(false);
 
   useEffect(() => {
     const resizeHandler = () => {
       setSplitText();
-      setIsDesktopView(window.innerWidth > 1024);
+      setIsDesktopView(showAvatar());
     };
     resizeHandler();
     window.addEventListener("resize", resizeHandler);
@@ -32,7 +30,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   }, []);
 
   useEffect(() => {
-    if (window.innerWidth <= 1024) return;
+    if (!showAvatar()) return;
 
     let timeoutId: ReturnType<typeof setTimeout> | undefined;
     let idleId: number | undefined;
@@ -64,7 +62,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Cursor />
       <Navbar />
       <SocialIcons />
-      {isDesktopView && !isMobile && shouldRenderCharacter && children}
+      {isDesktopView && shouldRenderCharacter && children}
       <div className="container-main">
         <Landing />
         <About />

@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
+const featuredProjects = config.projects.filter((project) => project.featured);
+
 const Work = () => {
   useEffect(() => {
     // Disable pinning on mobile to allow scrolling
@@ -65,11 +67,11 @@ const Work = () => {
           My <span>Work</span>
         </h2>
         <div className="work-flex">
-          {config.projects.slice(0, 5).map((project, index) => (
-            <div className="work-box" key={project.id}>
+          {featuredProjects.map((project, index) => (
+            <div className="work-box" key={project.title}>
               <div className="work-info">
                 <div className="work-title">
-                  <h3>0{index + 1}</h3>
+                  <h3>{String(index + 1).padStart(2, "0")}</h3>
 
                   <div>
                     <h4>{project.title}</h4>
@@ -77,9 +79,14 @@ const Work = () => {
                   </div>
                 </div>
                 <h4>Tools and features</h4>
-                <p>{project.technologies}</p>
+                <p>{project.tech.join(", ")}</p>
               </div>
-              <WorkImage image={project.image} alt={project.title} link={project.link} />
+              <WorkImage
+                image={project.image}
+                alt={project.title}
+                link={project.link}
+                video={project.video}
+              />
             </div>
           ))}
           {/* See All Works Button */}

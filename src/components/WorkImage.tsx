@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { isExternalLink as isExternal } from "../config";
 
 interface Props {
   image: string;
@@ -11,17 +12,11 @@ interface Props {
 
 const WorkImage = (props: Props) => {
   const [isVideo, setIsVideo] = useState(false);
-  const [video, setVideo] = useState("");
-  const isExternalLink = Boolean(props.link && !props.link.startsWith("/"));
+  const video = props.video ?? "";
+  const isExternalLink = isExternal(props.link ?? "");
 
-  const handleMouseEnter = async () => {
-    if (props.video) {
-      setIsVideo(true);
-      const response = await fetch(`src/assets/${props.video}`);
-      const blob = await response.blob();
-      const blobUrl = URL.createObjectURL(blob);
-      setVideo(blobUrl);
-    }
+  const handleMouseEnter = () => {
+    if (props.video) setIsVideo(true);
   };
 
   return (

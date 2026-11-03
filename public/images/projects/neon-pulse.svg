@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b080c"/>
+      <stop offset="1" stop-color="#6a1b9a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx=".8" cy=".3" r=".6">
+      <stop offset="0" stop-color="#ea80fc" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#ea80fc" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="40" height="40" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="2" fill="#ffffff" opacity=".07"/>
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#dots)"/>
+  <rect width="1600" height="900" fill="url(#glow)"/>
+  <path d="M900 520 C 980 380, 1060 660, 1140 480 S 1300 300, 1420 460" fill="none" stroke="#ea80fc" stroke-width="8" stroke-linecap="round" opacity=".6"/><path d="M900 600 C 1000 500, 1080 700, 1180 560 S 1330 440, 1420 560" fill="none" stroke="#ea80fc" stroke-width="4" opacity=".3"/>
+  <text x="120" y="470" font-family="Geist, Inter, Helvetica, Arial, sans-serif" font-size="120" font-weight="700" fill="#ffffff">Neon Pulse</text>
+  <text x="124" y="550" font-family="Geist, Inter, Helvetica, Arial, sans-serif" font-size="40" fill="#ea80fc" letter-spacing="2">Title Sequence</text>
+</svg>

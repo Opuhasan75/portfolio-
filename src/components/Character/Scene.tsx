@@ -12,6 +12,9 @@ import {
 } from "./utils/mouseUtils";
 import setAnimations from "./utils/animationUtils";
 import { setProgress } from "../Loading";
+import { config } from "../../config";
+
+const { camera: cameraConfig, headTracking } = config.avatar;
 
 const Scene = () => {
   const canvasDiv = useRef<HTMLDivElement | null>(null);
@@ -38,10 +41,10 @@ const Scene = () => {
       renderer.toneMappingExposure = 1;
       canvasDiv.current.appendChild(renderer.domElement);
 
-      const camera = new THREE.PerspectiveCamera(14.5, aspect, 0.1, 1000);
-      camera.position.z = 10;
-      camera.position.set(0, 13.1, 24.7);
-      camera.zoom = 1.1;
+      const camera = new THREE.PerspectiveCamera(cameraConfig.fov, aspect, 0.1, 1000);
+      const [camX = 0, camY = 13.1, camZ = 24.7] = cameraConfig.position;
+      camera.position.set(camX, camY, camZ);
+      camera.zoom = cameraConfig.zoom;
       camera.updateProjectionMatrix();
 
       let headBone: THREE.Object3D | null = null;
@@ -109,7 +112,7 @@ const Scene = () => {
       }
       const animate = () => {
         requestAnimationFrame(animate);
-        if (headBone) {
+        if (headBone && headTracking) {
           handleHeadRotation(
             headBone,
             mouse.x,
@@ -118,6 +121,8 @@ const Scene = () => {
             interpolation.y,
             THREE.MathUtils.lerp
           );
+        }
+        if (screenLight) {
           light.setPointLight(screenLight);
         }
         const delta = clock.getDelta();

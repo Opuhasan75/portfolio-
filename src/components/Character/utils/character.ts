@@ -2,6 +2,9 @@ import * as THREE from "three";
 import { DRACOLoader, GLTF, GLTFLoader } from "three-stdlib";
 import { setCharTimeline, setAllTimeline } from "../../utils/GsapScroll";
 import { decryptFile } from "./decrypt";
+import { config } from "../../../config";
+
+const { avatar } = config;
 
 const setCharacter = (
   renderer: THREE.WebGLRenderer,
@@ -10,21 +13,22 @@ const setCharacter = (
 ) => {
   const loader = new GLTFLoader();
   const dracoLoader = new DRACOLoader();
-  dracoLoader.setDecoderPath("/draco/");
+  dracoLoader.setDecoderPath(avatar.dracoDecoderPath);
   loader.setDRACOLoader(dracoLoader);
 
   const loadCharacter = () => {
     return new Promise<GLTF | null>(async (resolve, reject) => {
       try {
-        const encryptedBlob = await decryptFile(
-          "/models/character.enc",
-          "Character3D#@"
-        );
-        const blobUrl = URL.createObjectURL(new Blob([encryptedBlob]));
+        // Encrypted models are decrypted in the browser; plain .glb files load directly
+        const modelUrl = avatar.encrypted
+          ? URL.createObjectURL(
+              new Blob([await decryptFile(avatar.model, avatar.decryptionKey)])
+            )
+          : avatar.model;
 
         let character: THREE.Object3D;
         loader.load(
-          blobUrl,
+          modelUrl,
           async (gltf) => {
             character = gltf.scene;
             await renderer.compileAsync(character, camera, scene);
@@ -42,8 +46,10 @@ const setCharacter = (
             resolve(gltf);
             setCharTimeline(character, camera);
             setAllTimeline();
-            character!.getObjectByName("footR")!.position.y = 3.36;
-            character!.getObjectByName("footL")!.position.y = 3.36;
+            const footR = character.getObjectByName("footR");
+            const footL = character.getObjectByName("footL");
+            if (footR) footR.position.y = 3.36;
+            if (footL) footL.position.y = 3.36;
             dracoLoader.dispose();
           },
           undefined,

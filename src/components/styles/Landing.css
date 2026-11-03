@@ -123,6 +123,11 @@
     display: none;
   }
 
+  .landing-h2-2,
+  .landing-h2-info-1 {
+    display: none !important;
+  }
+
   /* Show mobile photo */
   .mobile-photo {
     display: block;
@@ -383,6 +388,13 @@
   white-space: nowrap;
 }
 
+/* Transforms don't apply to inline spans, so the rotating titles need inline-block
+   characters for their slide in/out animation to work */
+.landing-info .split-char {
+  display: inline-block;
+  white-space: pre;
+}
+
 .landing-h2-info-1 {
   position: absolute;
   top: 0;
@@ -390,7 +402,7 @@
 }
 
 h2.landing-info-h2 {
-  color: #c481ff;
+  color: var(--highlightColor);
   font-size: 36px;
   width: 150%;
   margin: 0;

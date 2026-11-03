@@ -1,0 +1,249 @@
+{
+  "site": {
+    "title": "Opu Hasan | Motion Graphics Designer & 3D Animator",
+    "description": "Portfolio of Opu Hasan, a motion graphics designer crafting brand animations, title sequences, explainers and 3D visuals that move people.",
+    "logo": "OH",
+    "url": "",
+    "theme": {
+      "accentColor": "#c2a4ff",
+      "highlightColor": "#c481ff",
+      "backgroundColor": "#0b080c"
+    }
+  },
+
+  "profile": {
+    "firstName": "Opu",
+    "lastName": "Hasan",
+    "greeting": "Hello! I'm",
+    "photo": "/images/avatar.svg",
+    "location": "Dhaka, Bangladesh",
+    "email": "hello@example.com",
+    "resume": "",
+    "headline": {
+      "prefix": "A",
+      "accent": ["Motion", "Creative"],
+      "main": ["Designer", "Animator"]
+    }
+  },
+
+  "loader": {
+    "brand": "Opu Hasan",
+    "marquee": ["Motion Designer", "3D Animator", "Visual Storyteller"]
+  },
+
+  "about": {
+    "title": "About Me",
+    "description": "I'm Opu, a motion graphics designer who brings brands, products and stories to life through movement. From punchy social ads and logo reveals to cinematic title sequences and 3D product films, I blend design, timing and sound to create visuals that feel alive. I love working closely with clients and creative teams, turning rough ideas into polished animations that communicate clearly and leave a lasting impression."
+  },
+
+  "services": [
+    {
+      "title": "MOTION DESIGN",
+      "subtitle": "Brand animation, explainers & social",
+      "description": "Designing and animating logo reveals, explainer videos, kinetic typography, UI motion and scroll-stopping social content, with strong storytelling and clean, purposeful movement.",
+      "tools": ["After Effects", "Illustrator", "Premiere Pro", "Photoshop", "Lottie", "Rive", "Kinetic Type", "Storyboarding"]
+    },
+    {
+      "title": "3D & VFX",
+      "subtitle": "CGI, product renders & simulations",
+      "description": "Creating 3D product visuals, abstract loops, title sequences and simulations, from modelling and lighting to rendering, compositing and colour grading.",
+      "tools": ["Cinema 4D", "Blender", "Houdini", "Redshift", "Octane", "Nuke", "DaVinci Resolve", "Unreal Engine"]
+    }
+  ],
+
+  "experience": [
+    {
+      "role": "Senior Motion Designer",
+      "company": "Creative Studio",
+      "period": "2024 - Present",
+      "description": "Leading motion projects from concept to delivery: brand campaigns, product launch films and social content for international clients. Mentoring junior animators and shaping the studio's motion language."
+    },
+    {
+      "role": "Motion Graphics Designer",
+      "company": "Digital Agency",
+      "period": "2022",
+      "description": "Produced explainer videos, logo animations and ad campaigns across 2D and 3D. Collaborated with art directors, copywriters and sound designers on fast-paced briefs."
+    },
+    {
+      "role": "Animator & Video Editor",
+      "company": "Freelance",
+      "period": "2020",
+      "description": "Worked with YouTubers, startups and local brands on edits, intros, lower thirds and short promo videos, building a strong foundation in timing and storytelling."
+    },
+    {
+      "role": "Started Designing",
+      "company": "Self-Taught",
+      "period": "2019",
+      "description": "Fell in love with design and animation, learning Photoshop, Illustrator and After Effects through personal projects and daily practice."
+    }
+  ],
+
+  "projects": [
+    {
+      "title": "Showreel 2026",
+      "category": "Showreel",
+      "tech": ["After Effects", "Cinema 4D", "Redshift", "Premiere Pro"],
+      "image": "/images/projects/showreel.svg",
+      "video": "",
+      "description": "A fast-cut highlight reel of my favourite brand, 3D and title work from the past year.",
+      "link": "",
+      "featured": true
+    },
+    {
+      "title": "Neon Pulse",
+      "category": "Title Sequence",
+      "tech": ["Cinema 4D", "Houdini", "Octane", "After Effects"],
+      "image": "/images/projects/neon-pulse.svg",
+      "video": "",
+      "description": "A cinematic opening title sequence for a tech conference, built around glowing particles and liquid typography.",
+      "link": "",
+      "featured": true
+    },
+    {
+      "title": "Brand in Motion",
+      "category": "Logo Animation",
+      "tech": ["After Effects", "Illustrator", "Sound Design"],
+      "image": "/images/projects/brand-motion.svg",
+      "video": "",
+      "description": "A complete motion identity for a startup: logo reveal, animated brand elements and a guide for consistent motion across channels.",
+      "link": "",
+      "featured": true
+    },
+    {
+      "title": "FinFlow Explainer",
+      "category": "2D Explainer",
+      "tech": ["After Effects", "Illustrator", "Duik", "Premiere Pro"],
+      "image": "/images/projects/explainer.svg",
+      "video": "",
+      "description": "A 90-second animated explainer that breaks down a fintech product into a simple, friendly story.",
+      "link": "",
+      "featured": true
+    },
+    {
+      "title": "Liquid Dreams",
+      "category": "3D Loop",
+      "tech": ["Blender", "Houdini", "DaVinci Resolve"],
+      "image": "/images/projects/liquid-dreams.svg",
+      "video": "",
+      "description": "A series of satisfying abstract 3D loops exploring fluid simulations, soft bodies and iridescent materials.",
+      "link": "",
+      "featured": true
+    },
+    {
+      "title": "Summer Drop Campaign",
+      "category": "Social Ads",
+      "tech": ["After Effects", "Photoshop", "Premiere Pro"],
+      "image": "/images/projects/social-ads.svg",
+      "video": "",
+      "description": "Snappy vertical ads and story animations for a fashion brand's seasonal launch, delivered in multiple formats.",
+      "link": "",
+      "featured": false
+    },
+    {
+      "title": "Midnight Echoes",
+      "category": "Music Video",
+      "tech": ["Blender", "After Effects", "DaVinci Resolve"],
+      "image": "/images/projects/music-video.svg",
+      "video": "",
+      "description": "An audio-reactive visualiser and lyric video for an indie artist, mixing 3D environments with hand-drawn textures.",
+      "link": "",
+      "featured": false
+    },
+    {
+      "title": "App Micro-interactions",
+      "category": "UI Motion",
+      "tech": ["After Effects", "Lottie", "Rive", "Figma"],
+      "image": "/images/projects/ui-motion.svg",
+      "video": "",
+      "description": "A library of lightweight Lottie and Rive animations for onboarding, loaders and button states in a mobile app.",
+      "link": "",
+      "featured": false
+    }
+  ],
+
+  "techStack": {
+    "title": "My Toolkit",
+    "items": [
+      { "name": "After Effects", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/aftereffects/aftereffects-original.svg", "url": "https://www.adobe.com/products/aftereffects.html" },
+      { "name": "Premiere Pro", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/premierepro/premierepro-original.svg", "url": "https://www.adobe.com/products/premiere.html" },
+      { "name": "Illustrator", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/illustrator/illustrator-plain.svg", "url": "https://www.adobe.com/products/illustrator.html" },
+      { "name": "Photoshop", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-original.svg", "url": "https://www.adobe.com/products/photoshop.html" },
+      { "name": "Cinema 4D", "icon": "https://cdn.simpleicons.org/cinema4d/ffffff", "url": "https://www.maxon.net/cinema-4d" },
+      { "name": "Blender", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg", "url": "https://www.blender.org" },
+      { "name": "Houdini", "icon": "https://cdn.simpleicons.org/houdini", "url": "https://www.sidefx.com" },
+      { "name": "DaVinci Resolve", "icon": "https://cdn.simpleicons.org/davinciresolve/ffffff", "url": "https://www.blackmagicdesign.com/products/davinciresolve" },
+
+      { "name": "Maya", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maya/maya-original.svg", "url": "https://www.autodesk.com/products/maya" },
+      { "name": "Unreal Engine", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unrealengine/unrealengine-original.svg", "url": "https://www.unrealengine.com" },
+      { "name": "Nuke", "icon": "https://cdn.simpleicons.org/nuke/ffffff", "url": "https://www.foundry.com/products/nuke-family/nuke" },
+      { "name": "Unity", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg", "url": "https://unity.com" },
+      { "name": "Figma", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", "url": "https://www.figma.com" },
+      { "name": "Adobe XD", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xd/xd-original.svg", "url": "https://www.adobe.com/products/xd.html" },
+
+      { "name": "Lottie", "icon": "https://cdn.simpleicons.org/lottiefiles", "url": "https://lottiefiles.com" },
+      { "name": "Rive", "icon": "https://cdn.simpleicons.org/rive/ffffff", "url": "https://rive.app" },
+      { "name": "Framer", "icon": "https://cdn.simpleicons.org/framer/ffffff", "url": "https://www.framer.com" },
+      { "name": "Canva", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg", "url": "https://www.canva.com" },
+
+      { "name": "Inkscape", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/inkscape/inkscape-original.svg", "url": "https://inkscape.org" },
+      { "name": "Three.js", "icon": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg", "url": "https://threejs.org" }
+    ]
+  },
+
+  "socials": [
+    { "name": "Behance", "icon": "behance", "url": "https://www.behance.net/", "showInSidebar": true },
+    { "name": "Dribbble", "icon": "dribbble", "url": "https://dribbble.com/", "showInSidebar": true },
+    { "name": "Instagram", "icon": "instagram", "url": "https://www.instagram.com/", "showInSidebar": true },
+    { "name": "LinkedIn", "icon": "linkedin", "url": "https://www.linkedin.com/", "showInSidebar": true },
+    { "name": "Vimeo", "icon": "vimeo", "url": "https://vimeo.com/", "showInSidebar": false },
+    { "name": "YouTube", "icon": "youtube", "url": "https://www.youtube.com/", "showInSidebar": false }
+  ],
+
+  "callToAction": {
+    "play": { "enabled": true, "label": "Play With Me →" },
+    "hire": { "label": "Hire Me →", "url": "" }
+  },
+
+  "play": {
+    "enabled": true,
+    "opponentName": "Opu",
+    "opponentLabel": "Chess Engine",
+    "engineDepth": 12,
+    "chat": {
+      "enabled": true,
+      "title": "💬 Talk with me",
+      "greeting": "Hey there! I'm Opu 👋 Ask me anything about my motion work, projects or tools.",
+      "placeholder": "Ask me anything...",
+      "extraFacts": [
+        "Languages: Bengali and English.",
+        "Open to freelance projects, studio collaborations and full-time roles.",
+        "Interests: motion design, 3D, film, music and chess."
+      ]
+    }
+  },
+
+  "avatar": {
+    "enabled": true,
+    "model": "/models/character.enc",
+    "encrypted": true,
+    "decryptionKey": "Character3D#@",
+    "dracoDecoderPath": "/draco/",
+    "environmentMap": "/models/char_enviorment.hdr",
+    "environmentIntensity": 0.64,
+    "headTracking": true,
+    "lights": {
+      "keyColor": "#c7a9ff",
+      "keyIntensity": 1,
+      "screenColor": "#c2a4ff"
+    },
+    "monitor": {
+      "screenColor": "#ffffff",
+      "glowColor": "#c8bfff"
+    },
+    "camera": {
+      "fov": 14.5,
+      "position": [0, 13.1, 24.7],
+      "zoom": 1.1
+    }
+  }
+}

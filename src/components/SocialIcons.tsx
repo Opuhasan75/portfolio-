@@ -1,14 +1,40 @@
 import {
+  FaBehance,
+  FaDribbble,
+  FaEnvelope,
+  FaFacebookF,
   FaGithub,
+  FaGlobe,
   FaInstagram,
   FaLinkedinIn,
+  FaMedium,
+  FaVimeoV,
   FaXTwitter,
+  FaYoutube,
 } from "react-icons/fa6";
+import { IconType } from "react-icons";
 import "./styles/SocialIcons.css";
 import { TbNotes } from "react-icons/tb";
 import { useEffect } from "react";
 import HoverLinks from "./HoverLinks";
-import { config } from "../config";
+import { activeSocials, config } from "../config";
+
+// Values allowed for "icon" in portfolio.json socials
+const socialIcons: Record<string, IconType> = {
+  github: FaGithub,
+  linkedin: FaLinkedinIn,
+  x: FaXTwitter,
+  twitter: FaXTwitter,
+  facebook: FaFacebookF,
+  instagram: FaInstagram,
+  youtube: FaYoutube,
+  vimeo: FaVimeoV,
+  dribbble: FaDribbble,
+  behance: FaBehance,
+  medium: FaMedium,
+  email: FaEnvelope,
+  website: FaGlobe,
+};
 
 const SocialIcons = () => {
   useEffect(() => {
@@ -60,33 +86,27 @@ const SocialIcons = () => {
   return (
     <div className="icons-section">
       <div className="social-icons" data-cursor="icons" id="social">
-        <span>
-          <a href={config.contact.github} target="_blank" rel="noopener noreferrer">
-            <FaGithub />
-          </a>
-        </span>
-        <span>
-          <a href={config.contact.linkedin} target="_blank" rel="noopener noreferrer">
-            <FaLinkedinIn />
-          </a>
-        </span>
-        <span>
-          <a href={config.contact.twitter} target="_blank" rel="noopener noreferrer">
-            <FaXTwitter />
-          </a>
-        </span>
-        <span>
-          <a href={config.contact.instagram} target="_blank" rel="noopener noreferrer">
-            <FaInstagram />
-          </a>
-        </span>
+        {activeSocials
+          .filter((social) => social.showInSidebar)
+          .map((social) => {
+            const Icon = socialIcons[social.icon] ?? FaGlobe;
+            return (
+              <span key={social.name}>
+                <a href={social.url} target="_blank" rel="noopener noreferrer" aria-label={social.name}>
+                  <Icon />
+                </a>
+              </span>
+            );
+          })}
       </div>
-      <a className="resume-button" href="#">
-        <HoverLinks text="RESUME" />
-        <span>
-          <TbNotes />
-        </span>
-      </a>
+      {config.profile.resume && (
+        <a className="resume-button" href={config.profile.resume} target="_blank" rel="noopener noreferrer">
+          <HoverLinks text="RESUME" />
+          <span>
+            <TbNotes />
+          </span>
+        </a>
+      )}
     </div>
   );
 };

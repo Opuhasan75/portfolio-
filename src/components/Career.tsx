@@ -21,11 +21,11 @@ const Career = () => {
           <div className="career-timeline">
             <div className="career-dot"></div>
           </div>
-          {config.experiences.map((exp, index) => (
+          {config.experience.map((exp, index) => (
             <div key={index} className="career-info-box">
               <div className="career-info-in">
                 <div className="career-role">
-                  <h4>{exp.position}</h4>
+                  <h4>{exp.role}</h4>
                   <h5>{exp.company}</h5>
                 </div>
                 <h3>{getDisplayYear(exp.period)}</h3>
