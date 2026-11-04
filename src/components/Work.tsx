@@ -88,6 +88,7 @@ const Work = () => {
                 alt={project.title}
                 link={project.link}
                 video={project.video}
+                aspectRatio={project.aspectRatio}
               />
             </div>
           ))}

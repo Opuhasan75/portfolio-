@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { CSSProperties, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import "./styles/DriveVideo.css";
 
-export default function DriveVideo({ id, title }: { id: string; title: string }) {
+export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: { id: string; title: string; image?: string; aspectRatio?: number }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const player = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
@@ -25,9 +25,9 @@ export default function DriveVideo({ id, title }: { id: string; title: string })
   };
 
   return (
-    <div className="work-image work-drive" data-cursor="disable">
+    <div className={`work-image work-drive ${aspectRatio < 1 ? "drive-reel" : "drive-landscape"}`} style={{ "--video-ratio": aspectRatio } as CSSProperties} data-cursor="disable">
       <button className="drive-play" onClick={play} aria-label={`Play ${title} in full screen`}>
-        <img src={`https://drive.google.com/thumbnail?id=${id}&sz=w1000`} alt="" loading="lazy" onError={(event) => { event.currentTarget.style.visibility = "hidden"; }} />
+        <img src={image || `https://drive.google.com/thumbnail?id=${id}&sz=w1000`} alt="" loading="lazy" onError={(event) => { event.currentTarget.style.visibility = "hidden"; }} />
         <span className="drive-play-label"><span aria-hidden="true">▶</span> Play video</span>
       </button>
       {createPortal(

@@ -25,7 +25,7 @@ const MyWorks = () => {
               <div className="myworks-card-number">{String(index + 1).padStart(2, "0")}</div>
               <div className="myworks-card-image">
                 {project.video ? (
-                  <WorkImage image={project.image} alt={project.title} video={project.video} />
+                  <WorkImage image={project.image} alt={project.title} video={project.video} aspectRatio={project.aspectRatio} />
                 ) : (
                   <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
                 )}
@@ -40,7 +40,7 @@ const MyWorks = () => {
           );
 
           if (project.video) {
-            return <div className="myworks-card" key={project.title}>{cardContent}</div>;
+            return <div className={`myworks-card ${project.aspectRatio && project.aspectRatio < 1 ? "myworks-reel" : "myworks-landscape"}`} key={project.title}>{cardContent}</div>;
           }
 
           if (isInternalLink) {

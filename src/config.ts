@@ -9,6 +9,7 @@ export interface Project {
   image: string;
   /** Optional direct video preview or Google Drive video link. */
   video?: string;
+  aspectRatio?: number;
   description: string;
   link: string;
   featured: boolean;

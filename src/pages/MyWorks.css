@@ -143,3 +143,13 @@
     grid-template-columns: 1fr;
   }
 }
+
+.myworks-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); align-items: start; }
+.myworks-landscape { grid-column: span 2; }
+.myworks-card .myworks-card-image:has(.work-drive) { height: auto; }
+@media (max-width: 1000px) { .myworks-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) {
+  .myworks-grid { grid-template-columns: minmax(0, 1fr); }
+  .myworks-landscape { grid-column: auto; }
+  .myworks-reel { width: min(100%, 320px); justify-self: center; }
+}

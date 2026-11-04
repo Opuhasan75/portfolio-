@@ -8,6 +8,7 @@ interface Props {
   image: string;
   alt?: string;
   video?: string;
+  aspectRatio?: number;
   link?: string;
 }
 
@@ -29,7 +30,7 @@ const WorkImage = (props: Props) => {
   } catch { /* Local video paths use the native player below. */ }
 
   if (driveId) {
-    return <DriveVideo id={driveId} title={props.alt || "Portfolio video"} />;
+    return <DriveVideo id={driveId} title={props.alt || "Portfolio video"} image={props.image} aspectRatio={props.aspectRatio} />;
   }
 
   return (

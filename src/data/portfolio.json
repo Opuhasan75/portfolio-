@@ -81,221 +81,243 @@
       "title": "SaaS Explainer 01",
       "category": "SaaS Explainer",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/11JUiaek6QhvN-FcFvlOzgJhtbsyHke5T.jpg",
       "video": "https://drive.google.com/file/d/11JUiaek6QhvN-FcFvlOzgJhtbsyHke5T/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/11JUiaek6QhvN-FcFvlOzgJhtbsyHke5T/view",
-      "featured": true
+      "featured": true,
+      "aspectRatio": 1.7793594306049823
     },
     {
       "title": "SaaS Explainer 02",
       "category": "SaaS Explainer",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1HEU5pRs2VVSOnBREKLW9bamYaAkoYek1.jpg",
       "video": "https://drive.google.com/file/d/1HEU5pRs2VVSOnBREKLW9bamYaAkoYek1/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1HEU5pRs2VVSOnBREKLW9bamYaAkoYek1/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 1.7793594306049823
     },
     {
       "title": "SaaS Explainer 03",
       "category": "SaaS Explainer",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1xh-b3506eAnbqnXOTPLkxlspP_LL8gsW.jpg",
       "video": "https://drive.google.com/file/d/1xh-b3506eAnbqnXOTPLkxlspP_LL8gsW/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1xh-b3506eAnbqnXOTPLkxlspP_LL8gsW/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 1.7793594306049823
     },
     {
       "title": "Talking Head 01",
       "category": "Talking Head",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1bJyhTHCPEwLN1Mv0_wjQWeckZhgaQLxt.jpg",
       "video": "https://drive.google.com/file/d/1bJyhTHCPEwLN1Mv0_wjQWeckZhgaQLxt/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1bJyhTHCPEwLN1Mv0_wjQWeckZhgaQLxt/view",
-      "featured": true
+      "featured": true,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "Talking Head 02",
       "category": "Talking Head",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1mDLeDljTit7EvUpewIK-WpcfkkCLX0VW.jpg",
       "video": "https://drive.google.com/file/d/1mDLeDljTit7EvUpewIK-WpcfkkCLX0VW/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1mDLeDljTit7EvUpewIK-WpcfkkCLX0VW/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "Talking Head 03",
       "category": "Talking Head",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1UYpBNZVeRVoaQaJY2AJhk1kiSbpnRpcF.jpg",
       "video": "https://drive.google.com/file/d/1UYpBNZVeRVoaQaJY2AJhk1kiSbpnRpcF/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1UYpBNZVeRVoaQaJY2AJhk1kiSbpnRpcF/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "Talking Head 04",
       "category": "Talking Head",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1Qvh33BZjOUiTSREwYBy6ZMhCyOr4Rr9j.jpg",
       "video": "https://drive.google.com/file/d/1Qvh33BZjOUiTSREwYBy6ZMhCyOr4Rr9j/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1Qvh33BZjOUiTSREwYBy6ZMhCyOr4Rr9j/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "Social Media Content 01",
       "category": "Social Media Content",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1sNMLyoov65xlfUa0QScq2XUNQ2SaVo56.jpg",
       "video": "https://drive.google.com/file/d/1sNMLyoov65xlfUa0QScq2XUNQ2SaVo56/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1sNMLyoov65xlfUa0QScq2XUNQ2SaVo56/view",
-      "featured": true
+      "featured": true,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "Social Media Content 02",
       "category": "Social Media Content",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1x8h3vNowYO6hNL82eUttb17QLf1Aif95.jpg",
       "video": "https://drive.google.com/file/d/1x8h3vNowYO6hNL82eUttb17QLf1Aif95/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1x8h3vNowYO6hNL82eUttb17QLf1Aif95/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.5625
     },
     {
       "title": "Social Media Content 03",
       "category": "Social Media Content",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1wvKjMIjfBjfFKB6VkR8FC9PDPfwO0yp2.jpg",
       "video": "https://drive.google.com/file/d/1wvKjMIjfBjfFKB6VkR8FC9PDPfwO0yp2/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1wvKjMIjfBjfFKB6VkR8FC9PDPfwO0yp2/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "Social Media Content 04",
       "category": "Social Media Content",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1mz-GFpd7snaIejIwl5VFztMqJiB6j-rl.jpg",
       "video": "https://drive.google.com/file/d/1mz-GFpd7snaIejIwl5VFztMqJiB6j-rl/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1mz-GFpd7snaIejIwl5VFztMqJiB6j-rl/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "Social Media Content 05",
       "category": "Social Media Content",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1w4fIld1zhc5JuhpnB3pDXdPEzHjm1QiW.jpg",
       "video": "https://drive.google.com/file/d/1w4fIld1zhc5JuhpnB3pDXdPEzHjm1QiW/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1w4fIld1zhc5JuhpnB3pDXdPEzHjm1QiW/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "AI Videos 01",
       "category": "AI Videos",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1dLV5CtBuRdDTX_KW82aYB4ukh4WVPYQV.jpg",
       "video": "https://drive.google.com/file/d/1dLV5CtBuRdDTX_KW82aYB4ukh4WVPYQV/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1dLV5CtBuRdDTX_KW82aYB4ukh4WVPYQV/view",
-      "featured": true
+      "featured": true,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "AI Videos 02",
       "category": "AI Videos",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1n_lC-52gp--Snx2okZ1kNhnNrX8oGTvz.jpg",
       "video": "https://drive.google.com/file/d/1n_lC-52gp--Snx2okZ1kNhnNrX8oGTvz/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1n_lC-52gp--Snx2okZ1kNhnNrX8oGTvz/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "AI Videos 03",
       "category": "AI Videos",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1mvq1ucisDApO4nvMh_JD3jX7iIl3DzwO.jpg",
       "video": "https://drive.google.com/file/d/1mvq1ucisDApO4nvMh_JD3jX7iIl3DzwO/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1mvq1ucisDApO4nvMh_JD3jX7iIl3DzwO/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "AI Videos 04",
       "category": "AI Videos",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1YfGMxdQ8F3ddNjcbdn3sCc5SBOuYD__R.jpg",
       "video": "https://drive.google.com/file/d/1YfGMxdQ8F3ddNjcbdn3sCc5SBOuYD__R/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1YfGMxdQ8F3ddNjcbdn3sCc5SBOuYD__R/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "AI Videos 05",
       "category": "AI Videos",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1Ingt2y1sv5wguxBe81oGiWrveUA3pbKR.jpg",
       "video": "https://drive.google.com/file/d/1Ingt2y1sv5wguxBe81oGiWrveUA3pbKR/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1Ingt2y1sv5wguxBe81oGiWrveUA3pbKR/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.562429696287964
     },
     {
       "title": "Product Motion Graphics 01",
       "category": "Product Motion Graphics",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1MOatwP0uRde_aenGBEHRHr1lsgKgVLj-.jpg",
       "video": "https://drive.google.com/file/d/1MOatwP0uRde_aenGBEHRHr1lsgKgVLj-/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1MOatwP0uRde_aenGBEHRHr1lsgKgVLj-/view",
-      "featured": true
+      "featured": true,
+      "aspectRatio": 0.5625
     },
     {
       "title": "Product Motion Graphics 02",
       "category": "Product Motion Graphics",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1PBH0ddWGl41DISrgQXvdoR8hbriyRl9n.jpg",
       "video": "https://drive.google.com/file/d/1PBH0ddWGl41DISrgQXvdoR8hbriyRl9n/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1PBH0ddWGl41DISrgQXvdoR8hbriyRl9n/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.5625
     },
     {
       "title": "Product Motion Graphics 03",
       "category": "Product Motion Graphics",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1xSHvtSsdNrsHtRDeGVDuhg-fWYPWUBcO.jpg",
       "video": "https://drive.google.com/file/d/1xSHvtSsdNrsHtRDeGVDuhg-fWYPWUBcO/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1xSHvtSsdNrsHtRDeGVDuhg-fWYPWUBcO/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.5625
     },
     {
       "title": "Product Motion Graphics 04",
       "category": "Product Motion Graphics",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1J1N4Yn4qGwEubJ2pXj_y4oozHRPtRrVD.jpg",
       "video": "https://drive.google.com/file/d/1J1N4Yn4qGwEubJ2pXj_y4oozHRPtRrVD/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1J1N4Yn4qGwEubJ2pXj_y4oozHRPtRrVD/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.5625
     },
     {
       "title": "Product Motion Graphics 05",
       "category": "Product Motion Graphics",
       "tech": [],
-      "image": "",
+      "image": "/images/projects/thumbnails/1xikCeshusV5sufK3743YlAyH-xCofR_l.jpg",
       "video": "https://drive.google.com/file/d/1xikCeshusV5sufK3743YlAyH-xCofR_l/preview",
       "description": "",
       "link": "https://drive.google.com/file/d/1xikCeshusV5sufK3743YlAyH-xCofR_l/view",
-      "featured": false
+      "featured": false,
+      "aspectRatio": 0.5609375
     }
   ],
   "techStack": {
