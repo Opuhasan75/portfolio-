@@ -7,7 +7,7 @@ export interface Project {
   category: string;
   tech: string[];
   image: string;
-  /** Optional preview clip (e.g. /videos/reel.mp4) that plays on hover. */
+  /** Optional direct video preview or Google Drive video link. */
   video?: string;
   description: string;
   link: string;

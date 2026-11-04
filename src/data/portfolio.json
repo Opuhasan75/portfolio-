@@ -76,7 +76,18 @@
       "description": "Taught computer fundamentals, MS Office, and basic software skills, helping students build confidence in using digital tools."
     }
   ],
-  "projects": [],
+  "projects": [
+    {
+      "title": "Featured Video",
+      "category": "Video",
+      "tech": [],
+      "image": "",
+      "video": "https://drive.google.com/file/d/11JUiaek6QhvN-FcFvlOzgJhtbsyHke5T/preview",
+      "description": "",
+      "link": "https://drive.google.com/file/d/11JUiaek6QhvN-FcFvlOzgJhtbsyHke5T/view?usp=sharing",
+      "featured": true
+    }
+  ],
   "techStack": {
     "title": "My Toolkit",
     "items": []

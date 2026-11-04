@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { config, isExternalLink } from "../config";
 import "./MyWorks.css";
+import WorkImage from "../components/WorkImage";
+import "../components/styles/Work.css";
 
 const MyWorks = () => {
   return (
@@ -22,7 +24,11 @@ const MyWorks = () => {
             <>
               <div className="myworks-card-number">{String(index + 1).padStart(2, "0")}</div>
               <div className="myworks-card-image">
-                <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
+                {project.video ? (
+                  <WorkImage image={project.image} alt={project.title} video={project.video} />
+                ) : (
+                  <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
+                )}
               </div>
               <div className="myworks-card-info">
                 <h3>{project.title}</h3>
@@ -32,6 +38,10 @@ const MyWorks = () => {
               </div>
             </>
           );
+
+          if (project.video) {
+            return <div className="myworks-card" key={project.title}>{cardContent}</div>;
+          }
 
           if (isInternalLink) {
             return (

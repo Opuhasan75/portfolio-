@@ -78,8 +78,10 @@ const Work = () => {
                     <p>{project.category}</p>
                   </div>
                 </div>
-                <h4>Tools and features</h4>
-                <p>{project.tech.join(", ")}</p>
+                {project.tech.length > 0 && <>
+                  <h4>Tools and features</h4>
+                  <p>{project.tech.join(", ")}</p>
+                </>}
               </div>
               <WorkImage
                 image={project.image}

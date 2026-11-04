@@ -19,6 +19,31 @@ const WorkImage = (props: Props) => {
     if (props.video) setIsVideo(true);
   };
 
+  let driveId = "";
+  try {
+    const url = new URL(video);
+    if (url.hostname === "drive.google.com") {
+      driveId = url.pathname.match(/^\/file\/d\/([a-zA-Z0-9_-]+)/)?.[1] ?? url.searchParams.get("id") ?? "";
+    }
+  } catch { /* Local video paths use the native player below. */ }
+
+  if (driveId) {
+    return (
+      <div className="work-image work-drive" data-cursor="disable">
+        <iframe
+          src={`https://drive.google.com/file/d/${driveId}/preview`}
+          title={props.alt ? `${props.alt} video` : "Portfolio video"}
+          allow="autoplay; fullscreen"
+          allowFullScreen
+          loading="lazy"
+        />
+        <a href={`https://drive.google.com/file/d/${driveId}/view`} target="_blank" rel="noopener noreferrer">
+          Open video in Google Drive ↗
+        </a>
+      </div>
+    );
+  }
+
   return (
     <div className="work-image">
       {props.link ? (
