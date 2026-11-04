@@ -300,7 +300,48 @@
   ],
   "techStack": {
     "title": "My Toolkit",
-    "items": []
+    "items": [
+      {
+        "name": "Adobe After Effects",
+        "icon": "/images/tools/after-effects.svg",
+        "url": "https://www.adobe.com/products/aftereffects.html"
+      },
+      {
+        "name": "Adobe Premiere Pro",
+        "icon": "/images/tools/premiere-pro.svg",
+        "url": "https://www.adobe.com/products/premiere.html"
+      },
+      {
+        "name": "DaVinci Resolve",
+        "icon": "/images/tools/davinci-resolve.svg",
+        "url": "https://www.blackmagicdesign.com/products/davinciresolve"
+      },
+      {
+        "name": "Adobe Photoshop",
+        "icon": "/images/tools/photoshop.svg",
+        "url": "https://www.adobe.com/products/photoshop.html"
+      },
+      {
+        "name": "Adobe Illustrator",
+        "icon": "/images/tools/illustrator.svg",
+        "url": "https://www.adobe.com/products/illustrator.html"
+      },
+      {
+        "name": "Figma",
+        "icon": "/images/tools/figma.svg",
+        "url": "https://www.figma.com/"
+      },
+      {
+        "name": "CapCut",
+        "icon": "/images/tools/capcut.svg",
+        "url": "https://www.capcut.com/"
+      },
+      {
+        "name": "Canva",
+        "icon": "/images/tools/canva.svg",
+        "url": "https://www.canva.com/"
+      }
+    ]
   },
   "socials": [
     {
