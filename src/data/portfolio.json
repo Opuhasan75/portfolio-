@@ -395,10 +395,10 @@
     "environmentIntensity": 0.64,
     "headTracking": true,
     "colors": {
-      "skin": "#a46d4f",
-      "hair": "#120d0b",
-      "eyebrows": "#120d0b",
-      "shirt": "#a8102b",
+      "skin": "#c98250",
+      "hair": "#171512",
+      "eyebrows": "#241b15",
+      "shirt": "#eee7d5",
       "pants": "#1c1c24",
       "shoes": "#ece9e4",
       "soles": "#2a2a2a"
