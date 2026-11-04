@@ -15,7 +15,7 @@
     "lastName": "Opu",
     "greeting": "Hello! I'm",
     "photo": "/images/avatar.svg",
-    "location": "",
+    "location": "Sylhet, Bangladesh",
     "email": "mahide.hasan0501@gmail.com",
     "resume": "",
     "headline": {
@@ -376,7 +376,7 @@
     },
     "hire": {
       "label": "Hire Me →",
-      "url": "mailto:mahide.hasan0501@gmail.com"
+      "url": "https://mail.google.com/mail/?view=cm&fs=1&to=mahide.hasan0501%40gmail.com&su=Project%20inquiry"
     }
   },
   "play": {
