@@ -1,3 +1,4 @@
+import DriveVideo from "./DriveVideo";
 import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -28,20 +29,7 @@ const WorkImage = (props: Props) => {
   } catch { /* Local video paths use the native player below. */ }
 
   if (driveId) {
-    return (
-      <div className="work-image work-drive" data-cursor="disable">
-        <iframe
-          src={`https://drive.google.com/file/d/${driveId}/preview`}
-          title={props.alt ? `${props.alt} video` : "Portfolio video"}
-          allow="autoplay; fullscreen"
-          allowFullScreen
-          loading="lazy"
-        />
-        <a href={`https://drive.google.com/file/d/${driveId}/view`} target="_blank" rel="noopener noreferrer">
-          Open video in Google Drive ↗
-        </a>
-      </div>
-    );
+    return <DriveVideo id={driveId} title={props.alt || "Portfolio video"} />;
   }
 
   return (
