@@ -12,6 +12,7 @@ import TechStackNew from "./TechStackNew";
 import CallToAction from "./CallToAction";
 import setSplitText from "./utils/splitText";
 import { showAvatar } from "../config";
+import "./styles/Responsive.css";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
   const [isDesktopView, setIsDesktopView] = useState<boolean>(showAvatar);

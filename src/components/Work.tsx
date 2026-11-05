@@ -12,8 +12,8 @@ const featuredProjects = config.projects.filter((project) => project.featured);
 
 const Work = () => {
   useEffect(() => {
-    // Disable pinning on mobile to allow scrolling
-    if (window.innerWidth <= 768) return;
+    const media = gsap.matchMedia();
+    media.add("(min-width: 1025px)", () => {
 
     let translateX: number = 0;
 
@@ -59,6 +59,8 @@ const Work = () => {
       timeline.kill();
       ScrollTrigger.getById("work")?.kill();
     };
+    });
+    return () => media.revert();
   }, []);
   return (
     <div className="work-section" id="work">

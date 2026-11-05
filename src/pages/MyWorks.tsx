@@ -1,3 +1,4 @@
+import "../components/styles/Responsive.css";
 import { Link } from "react-router-dom";
 import { config, isExternalLink } from "../config";
 import "./MyWorks.css";

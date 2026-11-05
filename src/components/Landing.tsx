@@ -33,6 +33,7 @@ const Landing = ({ children }: PropsWithChildren) => {
               )}
             </h2>
           </div>
+          <div className="mobile-headline"><p>{headline.accent[0]} {headline.main[0]}</p><span>Animation &amp; Video Editing</span></div>
           {/* Mobile photo - shows only on mobile when 3D character is hidden */}
           {photo && (
             <div className="mobile-photo">
