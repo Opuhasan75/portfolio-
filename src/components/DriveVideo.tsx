@@ -5,7 +5,7 @@ import "./styles/DriveVideo.css";
 export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: { id: string; title: string; image?: string; aspectRatio?: number }) {
   const dialog = useRef<HTMLDialogElement>(null);
   const player = useRef<HTMLDivElement>(null);
-  const [open, setOpen] = useState(false);
+  const media = useRef<HTMLVideoElement>(null);
   const [failed, setFailed] = useState(false);
 
   useEffect(() => () => { dialog.current?.close(); }, []);
@@ -13,7 +13,12 @@ export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: {
   const play = () => {
     dialog.current?.showModal();
     setFailed(false);
-    setOpen(true);
+    const video = media.current;
+    if (video) {
+      video.src = `/api/video?id=${id}`;
+      // Start during the original click, before fullscreen consumes user activation.
+      video.play().catch(() => { /* Native controls remain available. */ });
+    }
     // Request from the user's click; unsupported browsers keep the full-window dialog.
     player.current?.requestFullscreen?.().catch(() => {});
   };
@@ -23,7 +28,7 @@ export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: {
       document.exitFullscreen?.().catch(() => {});
     }
     dialog.current?.close();
-    setOpen(false);
+    media.current?.pause();
   };
 
   return (
@@ -33,23 +38,22 @@ export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: {
         <span className="drive-play-label"><span aria-hidden="true">▶</span> Play video</span>
       </button>
       {createPortal(
-        <dialog ref={dialog} className="drive-dialog" aria-label={title} onClose={() => setOpen(false)}>
+        <dialog ref={dialog} className="drive-dialog" aria-label={title} onClose={() => media.current?.pause()}>
           <div ref={player} className="drive-fullscreen" data-cursor="disable">
             <div className="drive-toolbar">
               <span>{title}</span>
               <button autoFocus onClick={close} aria-label="Close video">Close ×</button>
             </div>
-            {open && <video
+            <video
+              ref={media}
               className="drive-native-video"
-              src={`/api/video?id=${id}`}
               poster={image}
-              autoPlay
               controls
               playsInline
-              preload="metadata"
+              preload="none"
               aria-label={`${title} video`}
               onError={() => setFailed(true)}
-            />}
+            />
             {failed && <p className="drive-video-error" role="alert">This video could not load. Please try opening it in Google Drive below.</p>}
             <a className="drive-fallback" href={`https://drive.google.com/file/d/${id}/view`} target="_blank" rel="noopener noreferrer">Open in Google Drive ↗</a>
           </div>
@@ -58,4 +62,5 @@ export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: {
     </div>
   );
 }
+
 
