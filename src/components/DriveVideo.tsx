@@ -6,11 +6,13 @@ export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: {
   const dialog = useRef<HTMLDialogElement>(null);
   const player = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   useEffect(() => () => { dialog.current?.close(); }, []);
 
   const play = () => {
     dialog.current?.showModal();
+    setFailed(false);
     setOpen(true);
     // Request from the user's click; unsupported browsers keep the full-window dialog.
     player.current?.requestFullscreen?.().catch(() => {});
@@ -37,12 +39,18 @@ export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: {
               <span>{title}</span>
               <button autoFocus onClick={close} aria-label="Close video">Close ×</button>
             </div>
-            {open && <iframe
-              src={`https://drive.google.com/file/d/${id}/preview?autoplay=1`}
-              title={`${title} video`}
-              allow="autoplay; fullscreen"
-              allowFullScreen
+            {open && <video
+              className="drive-native-video"
+              src={`https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t`}
+              poster={image}
+              autoPlay
+              controls
+              playsInline
+              preload="metadata"
+              aria-label={`${title} video`}
+              onError={() => setFailed(true)}
             />}
+            {failed && <p className="drive-video-error" role="alert">This video could not load. Please try opening it in Google Drive below.</p>}
             <a className="drive-fallback" href={`https://drive.google.com/file/d/${id}/view`} target="_blank" rel="noopener noreferrer">Open in Google Drive ↗</a>
           </div>
         </dialog>, document.body

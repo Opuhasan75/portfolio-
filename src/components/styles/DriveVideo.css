@@ -16,3 +16,6 @@
 .work-box .drive-reel { max-width: 180px; align-self: center; }
 .myworks-card .drive-play { border: 0; border-radius: 0; }
 .myworks-card .drive-play-label { font-size: 14px; padding: 10px 15px; }
+
+.drive-fullscreen .drive-native-video { display: block; position: static; width: 100%; flex: 1; min-height: 0; object-fit: contain; background: #000; }
+.drive-video-error { margin: 0; padding: 12px 20px; text-align: center; color: #fff; background: #3c2020; }
