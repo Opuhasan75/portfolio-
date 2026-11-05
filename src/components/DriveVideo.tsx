@@ -41,7 +41,7 @@ export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: {
             </div>
             {open && <video
               className="drive-native-video"
-              src={`https://drive.usercontent.google.com/download?id=${id}&export=download&confirm=t`}
+              src={`/api/video?id=${id}`}
               poster={image}
               autoPlay
               controls
@@ -58,3 +58,4 @@ export default function DriveVideo({ id, title, image, aspectRatio = 16 / 9 }: {
     </div>
   );
 }
+
