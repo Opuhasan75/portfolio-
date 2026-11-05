@@ -239,3 +239,13 @@
     margin-top: 3px;
   }
 }
+
+/* Keep supplied brand icons in their original colors and readable on dark backgrounds. */
+.techstack-item { width: 116px; height: 120px; padding: 12px; box-sizing: border-box; }
+.techstack-item img { width: 64px; height: 64px; box-sizing: border-box; padding: 7px; border-radius: 12px; background: #fff; filter: none; opacity: 1; }
+.techstack-item span { font-size: 11px; max-width: 100%; white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.25; margin-top: 8px; }
+@media (max-width: 600px) {
+  .techstack-item { width: 92px; height: 108px; padding: 8px; }
+  .techstack-item img { width: 54px; height: 54px; }
+  .techstack-item span { font-size: 10px; max-width: 100%; margin-top: 6px; }
+}

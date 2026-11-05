@@ -325,43 +325,53 @@
     "items": [
       {
         "name": "Adobe After Effects",
-        "icon": "/images/tools/after-effects.svg",
+        "icon": "/images/tools/custom/after-effects.webp",
         "url": "https://www.adobe.com/products/aftereffects.html"
       },
       {
         "name": "Adobe Premiere Pro",
-        "icon": "/images/tools/premiere-pro.svg",
+        "icon": "/images/tools/custom/premiere-pro.webp",
         "url": "https://www.adobe.com/products/premiere.html"
       },
       {
         "name": "DaVinci Resolve",
-        "icon": "/images/tools/davinci-resolve.svg",
+        "icon": "/images/tools/custom/davinci-resolve.webp",
         "url": "https://www.blackmagicdesign.com/products/davinciresolve"
       },
       {
         "name": "Adobe Photoshop",
-        "icon": "/images/tools/photoshop.svg",
+        "icon": "/images/tools/custom/photoshop.webp",
         "url": "https://www.adobe.com/products/photoshop.html"
       },
       {
         "name": "Adobe Illustrator",
-        "icon": "/images/tools/illustrator.svg",
+        "icon": "/images/tools/custom/illustrator.webp",
         "url": "https://www.adobe.com/products/illustrator.html"
       },
       {
         "name": "Figma",
-        "icon": "/images/tools/figma.svg",
+        "icon": "/images/tools/custom/figma.webp",
         "url": "https://www.figma.com/"
       },
       {
         "name": "CapCut",
-        "icon": "/images/tools/capcut.svg",
+        "icon": "/images/tools/custom/capcut.webp",
         "url": "https://www.capcut.com/"
       },
       {
         "name": "Canva",
-        "icon": "/images/tools/canva.svg",
+        "icon": "/images/tools/custom/canva.webp",
         "url": "https://www.canva.com/"
+      },
+      {
+        "name": "ChatGPT",
+        "icon": "/images/tools/custom/chatgpt.webp",
+        "url": "https://chatgpt.com/"
+      },
+      {
+        "name": "Claude",
+        "icon": "/images/tools/custom/claude.webp",
+        "url": "https://claude.ai/"
       }
     ]
   },
