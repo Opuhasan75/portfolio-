@@ -46,8 +46,8 @@ const Landing = ({ children }: PropsWithChildren) => {
               />
             </div>
           )}
+          {children}
         </div>
-        {children}
       </div>
     </>
   );

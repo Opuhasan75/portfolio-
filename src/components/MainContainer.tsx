@@ -15,13 +15,13 @@ import { showAvatar } from "../config";
 import "./styles/Responsive.css";
 
 const MainContainer = ({ children }: PropsWithChildren) => {
-  const [isDesktopView, setIsDesktopView] = useState<boolean>(showAvatar);
+  const [isDesktopView, setIsDesktopView] = useState<boolean>(() => window.innerWidth > 1024);
   const [shouldRenderCharacter, setShouldRenderCharacter] = useState(false);
 
   useEffect(() => {
     const resizeHandler = () => {
       setSplitText();
-      setIsDesktopView(showAvatar());
+      setIsDesktopView(window.innerWidth > 1024);
     };
     resizeHandler();
     window.addEventListener("resize", resizeHandler);
@@ -65,7 +65,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <SocialIcons />
       {isDesktopView && shouldRenderCharacter && children}
       <div className="container-main">
-        <Landing />
+        <Landing>{!isDesktopView && shouldRenderCharacter && children}</Landing>
         <About />
         <WhatIDo />
         <Career />

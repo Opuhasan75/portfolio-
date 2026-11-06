@@ -103,3 +103,13 @@
   .play-page { min-height: 100svh; height: auto; }
   .player-info, .captured-pieces { min-width: 0; }
 }
+
+@media (max-width: 1024px) {
+  .landing-container .character-container { display: block; position: relative; order: 2; width: 100%; height: clamp(300px, 85vw, 420px); }
+  .landing-container .character-model { display: block !important; position: relative; left: auto; bottom: auto; transform: none; width: 100%; height: 100%; max-height: none; }
+  .landing-container .character-model::before, .landing-container .character-model::after { display: none; }
+  .landing-container .character-hover { pointer-events: none; }
+  .landing-container:has(.character-container) .mobile-photo { display: none; }
+  .character-pending::after { content: "Loading animated avatar..."; position: absolute; inset: 45% 0 auto; text-align: center; color: var(--accentColor); font-size: 14px; }
+  .landing-container .character-model canvas { width: 100%; height: 100%; touch-action: pan-y; }
+}

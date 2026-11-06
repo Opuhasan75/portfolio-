@@ -18,7 +18,7 @@ export const LoadingContext = createContext<LoadingType | null>(null);
 
 export const LoadingProvider = ({ children }: PropsWithChildren) => {
   // The loader tracks the 3D avatar download, so skip it when there is no avatar
-  const [isLoading, setIsLoading] = useState(showAvatar);
+  const [isLoading, setIsLoading] = useState(() => showAvatar() && window.innerWidth > 1024);
   const [loading, setLoading] = useState(0);
 
   const value = {
@@ -28,7 +28,7 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
   };
   useEffect(() => {
     // Auto-start animations when there's no 3D model to wait for
-    if (!showAvatar()) {
+    if (!showAvatar() || window.innerWidth <= 1024) {
       import("../components/utils/initialFX").then((module) => {
         if (module.initialFX) {
           setTimeout(() => {

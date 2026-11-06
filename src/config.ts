@@ -136,7 +136,7 @@ export const hireUrl =
   activeSocials.find((social) => social.icon === "linkedin")?.url ||
   `mailto:${config.profile.email}`;
 
-/** The 3D avatar only renders on desktop-sized screens. */
-export const showAvatar = () => config.avatar.enabled && window.innerWidth > 1024;
+/** Render the configured avatar on phones, tablets, and desktops. */
+export const showAvatar = () => config.avatar.enabled;
 
 export const isExternalLink = (link: string) => Boolean(link) && !link.startsWith("/");
