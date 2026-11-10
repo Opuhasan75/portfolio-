@@ -75,5 +75,5 @@ export default function setSplitText() {
     );
   });
 
-  ScrollTrigger.addEventListener("refresh", () => setSplitText());
+  // MainContainer rebuilds text on width changes; never register recursively on refresh.
 }

@@ -11,7 +11,6 @@ import {
   handleTouchMove,
 } from "./utils/mouseUtils";
 import setAnimations from "./utils/animationUtils";
-import { setProgress } from "../Loading";
 import { config } from "../../config";
 
 const { camera: cameraConfig, headTracking } = config.avatar;
@@ -39,7 +38,7 @@ const Scene = () => {
         powerPreference: mobile ? "low-power" : "high-performance",
       }); } catch { setFailed(true); setLoading(100); return; }
       renderer.setSize(container.width, container.height);
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, mobile ? 1.25 : 2));
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, mobile ? 1 : 1.5));
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1;
       canvasDiv.current.appendChild(renderer.domElement);
@@ -57,7 +56,6 @@ const Scene = () => {
       const clock = new THREE.Clock();
 
       const light = setLighting(scene);
-      let progress = setProgress((value) => setLoading(value));
       const { loadCharacter } = setCharacter(renderer, scene, camera);
 
       loadCharacter().then((gltf) => {
@@ -70,36 +68,27 @@ const Scene = () => {
           scene.add(character);
           headBone = character.getObjectByName("spine006") || null;
           screenLight = character.getObjectByName("screenlight") || null;
-          if (mobile) { light.turnOnLights(); animations.startIntro(); }
-          progress.loaded().then(() => {
-            if (mobile) return;
-            setTimeout(() => {
-              light.turnOnLights();
-              animations.startIntro();
-            }, 2500);
-          });
-          window.addEventListener("resize", () =>
-            handleResize(renderer, camera, canvasDiv, character)
-          );
+          light.turnOnLights();
+          animations.startIntro();
+
         }
       }).catch(() => { setFailed(true); setLoading(100); });
 
+      let previousWidth = window.innerWidth;
+      const onResize = () => {
+        if (window.innerWidth === previousWidth) return;
+        previousWidth = window.innerWidth;
+        const model = scene.children.find(child => child.getObjectByName("spine006"));
+        if (model) handleResize(renderer, camera, canvasDiv, model);
+      };
+      window.addEventListener("resize", onResize);
       let mouse = { x: 0, y: 0 },
         interpolation = { x: 0.1, y: 0.2 };
 
       const onMouseMove = (event: MouseEvent) => {
         handleMouseMove(event, (x, y) => (mouse = { x, y }));
       };
-      let debounce: number | undefined;
-      const onTouchStart = (event: TouchEvent) => {
-        const element = event.target as HTMLElement;
-        debounce = setTimeout(() => {
-          element?.addEventListener("touchmove", (e: TouchEvent) =>
-            handleTouchMove(e, (x, y) => (mouse = { x, y }))
-          );
-        }, 200);
-      };
-
+      const onTouchMove = (event: TouchEvent) => handleTouchMove(event, (x, y) => (mouse = { x, y }));
       const onTouchEnd = () => {
         handleTouchEnd((x, y, interpolationX, interpolationY) => {
           mouse = { x, y };
@@ -107,21 +96,22 @@ const Scene = () => {
         });
       };
 
-      document.addEventListener("mousemove", (event) => {
-        onMouseMove(event);
-      });
+      document.addEventListener("mousemove", onMouseMove, { passive: true });
       const landingDiv = document.getElementById("landingDiv");
       if (landingDiv) {
-        landingDiv.addEventListener("touchstart", onTouchStart);
+        landingDiv.addEventListener("touchmove", onTouchMove, { passive: true });
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
       let frame = 0;
       let visible = true;
       const observer = new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; });
       observer.observe(canvasDiv.current);
-      const animate = () => {
+      let lastRender = 0;
+      const animate = (now = 0) => {
         frame = requestAnimationFrame(animate);
-        if (mobile && (!visible || document.hidden)) { clock.getDelta(); return; }
+        if (!visible || document.hidden) { clock.getDelta(); return; }
+        if (now - lastRender < 1000 / (mobile ? 30 : 45)) return;
+        lastRender = now;
         if (headBone && headTracking) {
           handleHeadRotation(
             headBone,
@@ -145,18 +135,16 @@ const Scene = () => {
       return () => {
         cancelAnimationFrame(frame);
         observer.disconnect();
-        clearTimeout(debounce);
+
         scene.clear();
         renderer.dispose();
-        window.removeEventListener("resize", () =>
-          handleResize(renderer, camera, canvasDiv, character!)
-        );
+        window.removeEventListener("resize", onResize);
         if (canvasDiv.current) {
           canvasDiv.current.removeChild(renderer.domElement);
         }
         if (landingDiv) {
           document.removeEventListener("mousemove", onMouseMove);
-          landingDiv.removeEventListener("touchstart", onTouchStart);
+          landingDiv.removeEventListener("touchmove", onTouchMove);
           landingDiv.removeEventListener("touchend", onTouchEnd);
         }
       };

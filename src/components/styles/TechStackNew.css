@@ -249,3 +249,5 @@
   .techstack-item img { width: 54px; height: 54px; }
   .techstack-item span { font-size: 10px; max-width: 100%; margin-top: 6px; }
 }
+
+.techstack-video-container { background: radial-gradient(ellipse at center, #33204d 0%, var(--backgroundColor) 75%); }

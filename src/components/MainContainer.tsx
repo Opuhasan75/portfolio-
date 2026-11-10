@@ -19,7 +19,11 @@ const MainContainer = ({ children }: PropsWithChildren) => {
   const [shouldRenderCharacter, setShouldRenderCharacter] = useState(false);
 
   useEffect(() => {
+    let previousWidth = window.innerWidth;
+    setSplitText();
     const resizeHandler = () => {
+      if (window.innerWidth === previousWidth) return;
+      previousWidth = window.innerWidth;
       setSplitText();
       setIsDesktopView(window.innerWidth > 1024);
     };
@@ -28,6 +32,12 @@ const MainContainer = ({ children }: PropsWithChildren) => {
     return () => {
       window.removeEventListener("resize", resizeHandler);
     };
+  }, []);
+
+  useEffect(() => {
+    let active = true;
+    import("./utils/initialFX").then(module => { if (active) module.initialFX(); });
+    return () => { active = false; };
   }, []);
 
   useEffect(() => {
