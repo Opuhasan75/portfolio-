@@ -1,4 +1,5 @@
 import DriveVideo from "./DriveVideo";
+import YouTubeVideo from "./YouTubeVideo";
 import { useState } from "react";
 import { MdArrowOutward } from "react-icons/md";
 import { Link } from "react-router-dom";
@@ -22,13 +23,21 @@ const WorkImage = (props: Props) => {
   };
 
   let driveId = "";
+  let youtubeId = "";
   try {
     const url = new URL(video);
+    if (url.hostname === "youtu.be") youtubeId = url.pathname.slice(1);
+    if (["youtube.com", "www.youtube.com", "www.youtube-nocookie.com"].includes(url.hostname)) {
+      youtubeId = url.searchParams.get("v") || url.pathname.match(/^\/(?:embed|shorts)\/([a-zA-Z0-9_-]{11})/)?.[1] || "";
+    }
     if (url.hostname === "drive.google.com") {
       driveId = url.pathname.match(/^\/file\/d\/([a-zA-Z0-9_-]+)/)?.[1] ?? url.searchParams.get("id") ?? "";
     }
   } catch { /* Local video paths use the native player below. */ }
 
+  if (/^[a-zA-Z0-9_-]{11}$/.test(youtubeId)) {
+    return <YouTubeVideo id={youtubeId} title={props.alt || "Portfolio video"} aspectRatio={props.aspectRatio} />;
+  }
   if (driveId) {
     return <DriveVideo id={driveId} title={props.alt || "Portfolio video"} image={props.image} aspectRatio={props.aspectRatio} />;
   }

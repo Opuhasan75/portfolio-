@@ -81,34 +81,67 @@
       "title": "SaaS Explainer 01",
       "category": "SaaS Explainer",
       "tech": [],
-      "image": "/images/projects/thumbnails/11JUiaek6QhvN-FcFvlOzgJhtbsyHke5T.jpg",
-      "video": "https://drive.google.com/file/d/11JUiaek6QhvN-FcFvlOzgJhtbsyHke5T/preview",
+      "image": "https://i.ytimg.com/vi/BHhtpfsEIqw/hqdefault.jpg",
+      "video": "https://youtu.be/BHhtpfsEIqw",
       "description": "",
-      "link": "https://drive.google.com/file/d/11JUiaek6QhvN-FcFvlOzgJhtbsyHke5T/view",
+      "link": "https://youtu.be/BHhtpfsEIqw",
       "featured": true,
-      "aspectRatio": 1.7793594306049823
+      "aspectRatio": 1.7777777777777777
     },
     {
       "title": "SaaS Explainer 02",
       "category": "SaaS Explainer",
       "tech": [],
-      "image": "/images/projects/thumbnails/1HEU5pRs2VVSOnBREKLW9bamYaAkoYek1.jpg",
-      "video": "https://drive.google.com/file/d/1HEU5pRs2VVSOnBREKLW9bamYaAkoYek1/preview",
+      "image": "https://i.ytimg.com/vi/hJq3GT8e8Xo/hqdefault.jpg",
+      "video": "https://youtu.be/hJq3GT8e8Xo",
       "description": "",
-      "link": "https://drive.google.com/file/d/1HEU5pRs2VVSOnBREKLW9bamYaAkoYek1/view",
+      "link": "https://youtu.be/hJq3GT8e8Xo",
       "featured": false,
-      "aspectRatio": 1.7793594306049823
+      "aspectRatio": 1.7777777777777777
     },
     {
       "title": "SaaS Explainer 03",
       "category": "SaaS Explainer",
       "tech": [],
-      "image": "/images/projects/thumbnails/1xh-b3506eAnbqnXOTPLkxlspP_LL8gsW.jpg",
-      "video": "https://drive.google.com/file/d/1xh-b3506eAnbqnXOTPLkxlspP_LL8gsW/preview",
+      "image": "https://i.ytimg.com/vi/NTGCMEZ9o5Y/hqdefault.jpg",
+      "video": "https://youtu.be/NTGCMEZ9o5Y",
       "description": "",
-      "link": "https://drive.google.com/file/d/1xh-b3506eAnbqnXOTPLkxlspP_LL8gsW/view",
+      "link": "https://youtu.be/NTGCMEZ9o5Y",
       "featured": false,
-      "aspectRatio": 1.7793594306049823
+      "aspectRatio": 1.7777777777777777
+    },
+    {
+      "title": "SaaS Explainer 04",
+      "category": "SaaS Explainer",
+      "tech": [],
+      "image": "https://i.ytimg.com/vi/BMbw1FDUs8k/hqdefault.jpg",
+      "video": "https://youtu.be/BMbw1FDUs8k",
+      "description": "",
+      "link": "https://youtu.be/BMbw1FDUs8k",
+      "featured": false,
+      "aspectRatio": 1.7777777777777777
+    },
+    {
+      "title": "SaaS Explainer 05",
+      "category": "SaaS Explainer",
+      "tech": [],
+      "image": "https://i.ytimg.com/vi/ourCV-uSBls/hqdefault.jpg",
+      "video": "https://youtu.be/ourCV-uSBls",
+      "description": "",
+      "link": "https://youtu.be/ourCV-uSBls",
+      "featured": false,
+      "aspectRatio": 1.7777777777777777
+    },
+    {
+      "title": "SaaS Explainer 06",
+      "category": "SaaS Explainer",
+      "tech": [],
+      "image": "https://i.ytimg.com/vi/JPDONITYAEs/hqdefault.jpg",
+      "video": "https://youtu.be/JPDONITYAEs",
+      "description": "",
+      "link": "https://youtu.be/JPDONITYAEs",
+      "featured": false,
+      "aspectRatio": 1.7777777777777777
     },
     {
       "title": "Talking Head 01",
