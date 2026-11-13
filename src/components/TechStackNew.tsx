@@ -48,6 +48,12 @@ const TechStackNew = () => {
   const section = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const [loadVideo, setLoadVideo] = useState(false);
+  const [revealed, setRevealed] = useState(false);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => setRevealed(entry.isIntersecting), { threshold: 0.2 });
+    if (section.current) observer.observe(section.current);
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     // Decorative media should not compete with the avatar on phones.
     if (window.innerWidth <= 1024 || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
@@ -68,7 +74,7 @@ const TechStackNew = () => {
   }, []);
   useEffect(() => { if (loadVideo) { video.current?.load(); video.current?.play().catch(() => {}); } }, [loadVideo]);
   return (
-    <div className="techstack-new" ref={section}>
+    <div className={`techstack-new ${revealed ? "tools-emerging" : ""}`} ref={section}>
       <svg width="0" height="0" aria-hidden="true" style={{ position: "absolute" }}><defs><filter id="tool-icon-white" colorInterpolationFilters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3" result="cutout" /><feComposite in="cutout" in2="SourceGraphic" operator="in" /></filter></defs></svg>
       {/* Video Background */}
       <div className="techstack-video-container">
