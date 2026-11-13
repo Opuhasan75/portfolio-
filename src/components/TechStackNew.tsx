@@ -24,6 +24,26 @@ const toPyramid = (items: TechItem[]): TechItem[][] => {
 
 const techStack = toPyramid(config.techStack.items);
 
+const adobeMarks: Record<string, { text: string; color: string }> = {
+  "Adobe After Effects": { text: "Ae", color: "#a99bff" },
+  "Adobe Premiere Pro": { text: "Pr", color: "#a99bff" },
+  "Adobe Photoshop": { text: "Ps", color: "#31a8ff" },
+  "Adobe Illustrator": { text: "Ai", color: "#ff9a00" },
+};
+
+const ToolIcon = ({ tech }: { tech: TechItem }) => {
+  const mark = adobeMarks[tech.name];
+  if (mark) return <span className="tool-bare-mark" aria-hidden="true" style={{ color: mark.color }}>{mark.text}</span>;
+  if (tech.name === "DaVinci Resolve") return (
+    <svg className="tool-bare-icon" viewBox="0 0 64 64" aria-hidden="true">
+      <path fill="#28c6d4" d="M32 29C23 22 19 16 22 9C26-2 43 1 44 12C45 19 38 25 32 29Z" />
+      <path fill="#f0dc61" d="M29 34C28 45 24 54 16 55C4 56 0 42 9 36C15 32 23 33 29 34Z" />
+      <path fill="#f36b6b" d="M36 34C47 31 55 34 58 41C63 52 49 61 41 52C37 47 36 40 36 34Z" />
+    </svg>
+  );
+  return <img src={tech.icon} alt="" loading="lazy" decoding="async" />;
+};
+
 const TechStackNew = () => {
   const section = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
@@ -84,7 +104,7 @@ const TechStackNew = () => {
                   title={tech.name}
                   data-cursor="disable"
                 >
-                  <img src={tech.icon} alt={tech.name} loading="lazy" decoding="async" />
+                  <ToolIcon tech={tech} />
                   <span>{tech.name}</span>
                 </a>
               ))}
@@ -97,3 +117,4 @@ const TechStackNew = () => {
 };
 
 export default TechStackNew;
+

@@ -258,3 +258,14 @@
 .techstack-new .techstack-item img[src*="davinci"] { filter: url(#tool-icon-white); }
 .techstack-new .techstack-item img[src*="capcut"],
 .techstack-new .techstack-item img[src*="chatgpt"] { filter: brightness(0) invert(1); }
+
+/* Standalone brand marks: no outer cards, borders, or logo tiles. */
+.techstack-new .techstack-item,
+.techstack-new .techstack-item:hover { background: transparent; border-color: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.techstack-new .techstack-item .tool-bare-mark { display: grid; place-items: center; width: 64px; height: 64px; margin: 0; font-family: Arial, sans-serif; font-size: 50px; font-weight: 700; line-height: 1; letter-spacing: -3px; }
+.techstack-new .tool-bare-icon { width: 64px; height: 64px; flex-shrink: 0; }
+@media (max-width: 600px) {
+  .techstack-new .techstack-item .tool-bare-mark { width: 54px; height: 54px; font-size: 44px; }
+  .techstack-new .tool-bare-icon { width: 54px; height: 54px; }
+}
+
