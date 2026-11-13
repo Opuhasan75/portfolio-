@@ -46,6 +46,7 @@ const ToolIcon = ({ tech }: { tech: TechItem }) => {
 
 const TechStackNew = () => {
   const section = useRef<HTMLDivElement>(null);
+  const orbit = useRef<HTMLDivElement>(null);
   const video = useRef<HTMLVideoElement>(null);
   const [loadVideo, setLoadVideo] = useState(false);
   const [revealed, setRevealed] = useState(false);
@@ -73,8 +74,58 @@ const TechStackNew = () => {
     return () => { observer.disconnect(); document.removeEventListener("visibilitychange", sync); };
   }, []);
   useEffect(() => { if (loadVideo) { video.current?.load(); video.current?.play().catch(() => {}); } }, [loadVideo]);
+  useEffect(() => {
+    const stage = orbit.current;
+    if (!stage || !revealed) return;
+    const items = Array.from(stage.querySelectorAll<HTMLElement>(".techstack-item"));
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let width = stage.clientWidth;
+    let height = stage.clientHeight;
+    let frame = 0;
+    let last = 0;
+    let phase = 0;
+    let targetX = 0, targetY = 0, tiltX = 0, tiltY = 0;
+    const resize = new ResizeObserver(() => { width = stage.clientWidth; height = stage.clientHeight; });
+    resize.observe(stage);
+    const move = (event: PointerEvent) => {
+      if (event.pointerType !== "mouse") return;
+      const rect = stage.getBoundingClientRect();
+      targetX = (event.clientX - rect.left) / rect.width - .5;
+      targetY = (event.clientY - rect.top) / rect.height - .5;
+    };
+    const leave = () => { targetX = 0; targetY = 0; };
+    const draw = (now: number) => {
+      if (!document.hidden && (!last || now - last >= 32)) {
+        const delta = last ? Math.min(now - last, 64) : 0;
+        last = now;
+        if (!reduced) phase += delta * .00016;
+        tiltX += (targetX - tiltX) * .045;
+        tiltY += (targetY - tiltY) * .045;
+        items.forEach((item, index) => {
+          const angle = index / items.length * Math.PI * 2 + phase;
+          const depth = (Math.sin(angle) + 1) / 2;
+          const x = Math.cos(angle) * (width / 2 - (width < 700 ? 48 : 65));
+          const y = Math.sin(angle) * height * .34 + Math.cos(angle) * tiltX * 65 + tiltY * 22;
+          const scale = .65 + depth * .4;
+          item.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(${scale})`;
+          item.style.opacity = `${.45 + depth * .55}`;
+          item.style.zIndex = `${Math.round(depth * 10) + 1}`;
+        });
+      }
+      if (!reduced) frame = requestAnimationFrame(draw);
+    };
+    stage.addEventListener("pointermove", move);
+    stage.addEventListener("pointerleave", leave);
+    frame = requestAnimationFrame(draw);
+    return () => {
+      cancelAnimationFrame(frame);
+      resize.disconnect();
+      stage.removeEventListener("pointermove", move);
+      stage.removeEventListener("pointerleave", leave);
+    };
+  }, [revealed]);
   return (
-    <div className={`techstack-new ${revealed ? "tools-emerging" : ""}`} ref={section}>
+    <div className="techstack-new tools-orbit" ref={section}>
       <svg width="0" height="0" aria-hidden="true" style={{ position: "absolute" }}><defs><filter id="tool-icon-white" colorInterpolationFilters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 3" result="cutout" /><feComposite in="cutout" in2="SourceGraphic" operator="in" /></filter></defs></svg>
       {/* Video Background */}
       <div className="techstack-video-container">
@@ -97,7 +148,7 @@ const TechStackNew = () => {
       <div className="techstack-content">
         <h2>{config.techStack.title}</h2>
         
-        <div className="techstack-pyramid">
+        <div className="techstack-pyramid" ref={orbit}>
           {techStack.map((row, rowIndex) => (
             <div key={rowIndex} className="techstack-row">
               {row.map((tech, techIndex) => (
