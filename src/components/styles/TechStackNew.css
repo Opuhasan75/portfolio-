@@ -252,9 +252,9 @@
 
 .techstack-video-container { background: radial-gradient(ellipse at center, #33204d 0%, var(--backgroundColor) 75%); }
 
-/* Keep the original layout on a plain background. */
-.techstack-new { background: var(--backgroundColor); }
-
-/* Keep the page background; show tools without card panels. */
-.techstack-new .techstack-item,
-.techstack-new .techstack-item:hover { background: transparent; border-color: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+/* Only remove the white icon backing; retain all original section styling. */
+.techstack-item img { background: transparent; padding: 0; }
+.techstack-new .techstack-item img[src*="figma"],
+.techstack-new .techstack-item img[src*="davinci"] { filter: url(#tool-icon-white); }
+.techstack-new .techstack-item img[src*="capcut"],
+.techstack-new .techstack-item img[src*="chatgpt"] { filter: brightness(0) invert(1); }
