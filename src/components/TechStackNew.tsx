@@ -1,25 +1,58 @@
 import "./styles/TechStackNew.css";
-import { config } from "../config";
+import { config, TechItem } from "../config";
 
-const TechStackNew = () => (
-  <section className="techstack-new" aria-labelledby="toolkit-heading">
-    <div className="techstack-content">
-      <div className="toolkit-heading">
-        <p className="toolkit-eyebrow">THE TOOLS BEHIND THE WORK</p>
-        <h2 id="toolkit-heading">{config.techStack.title}</h2>
-        <p className="toolkit-description">From the first idea to the final frame.</p>
-      </div>
-      <div className="techstack-pyramid">
-        {config.techStack.items.map((tech) => (
-          <a key={tech.name} href={tech.url} target="_blank" rel="noopener noreferrer" className="techstack-item" title={tech.name} data-cursor="disable">
-            <span className="toolkit-icon"><img src={tech.icon} alt="" loading="lazy" decoding="async" /></span>
-            <span className="toolkit-name">{tech.name}</span>
-            <span className="toolkit-arrow" aria-hidden="true">↗</span>
-          </a>
-        ))}
+// Arrange the flat list from portfolio.json into an inverted pyramid,
+// e.g. 30 items -> rows of 10, 8, 6, 4, 2.
+const toPyramid = (items: TechItem[]): TechItem[][] => {
+  let top = 1;
+  const capacity = (size: number) => {
+    let total = 0;
+    for (let row = size; row > 0; row -= 2) total += row;
+    return total;
+  };
+  while (capacity(top) < items.length) top++;
+
+  const rows: TechItem[][] = [];
+  let start = 0;
+  for (let size = top; size > 0 && start < items.length; size -= 2) {
+    rows.push(items.slice(start, start + size));
+    start += size;
+  }
+  return rows;
+};
+
+const techStack = toPyramid(config.techStack.items);
+
+const TechStackNew = () => {
+  return (
+    <div className="techstack-new">
+      {/* Content */}
+      <div className="techstack-content">
+        <h2>{config.techStack.title}</h2>
+        
+        <div className="techstack-pyramid">
+          {techStack.map((row, rowIndex) => (
+            <div key={rowIndex} className="techstack-row">
+              {row.map((tech, techIndex) => (
+                <a
+                  key={techIndex}
+                  href={tech.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="techstack-item"
+                  title={tech.name}
+                  data-cursor="disable"
+                >
+                  <img src={tech.icon} alt={tech.name} loading="lazy" decoding="async" />
+                  <span>{tech.name}</span>
+                </a>
+              ))}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
-  </section>
-);
+  );
+};
 
 export default TechStackNew;
