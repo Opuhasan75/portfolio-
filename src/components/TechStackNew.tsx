@@ -1,4 +1,5 @@
 import "./styles/TechStackNew.css";
+import { useEffect, useRef } from "react";
 import { config, TechItem } from "../config";
 
 // Arrange the flat list from portfolio.json into an inverted pyramid,
@@ -24,8 +25,19 @@ const toPyramid = (items: TechItem[]): TechItem[][] => {
 const techStack = toPyramid(config.techStack.items);
 
 const TechStackNew = () => {
+  const section = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      document.body.classList.toggle("toolkit-plain", entry.isIntersecting);
+    });
+    if (section.current) observer.observe(section.current);
+    return () => {
+      observer.disconnect();
+      document.body.classList.remove("toolkit-plain");
+    };
+  }, []);
   return (
-    <div className="techstack-new">
+    <div className="techstack-new" ref={section}>
       {/* Content */}
       <div className="techstack-content">
         <h2>{config.techStack.title}</h2>
@@ -56,3 +68,4 @@ const TechStackNew = () => {
 };
 
 export default TechStackNew;
+
