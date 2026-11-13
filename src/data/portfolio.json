@@ -147,45 +147,34 @@
       "title": "Talking Head 01",
       "category": "Talking Head",
       "tech": [],
-      "image": "/images/projects/thumbnails/1bJyhTHCPEwLN1Mv0_wjQWeckZhgaQLxt.jpg",
-      "video": "https://drive.google.com/file/d/1bJyhTHCPEwLN1Mv0_wjQWeckZhgaQLxt/preview",
+      "image": "https://i.ytimg.com/vi/Lw5qFXhXdws/hqdefault.jpg",
+      "video": "https://youtu.be/Lw5qFXhXdws",
       "description": "",
-      "link": "https://drive.google.com/file/d/1bJyhTHCPEwLN1Mv0_wjQWeckZhgaQLxt/view",
+      "link": "https://youtu.be/Lw5qFXhXdws",
       "featured": true,
-      "aspectRatio": 0.562429696287964
+      "aspectRatio": 0.5625
     },
     {
       "title": "Talking Head 02",
       "category": "Talking Head",
       "tech": [],
-      "image": "/images/projects/thumbnails/1mDLeDljTit7EvUpewIK-WpcfkkCLX0VW.jpg",
-      "video": "https://drive.google.com/file/d/1mDLeDljTit7EvUpewIK-WpcfkkCLX0VW/preview",
+      "image": "https://i.ytimg.com/vi/FEEMvQ9dau0/hqdefault.jpg",
+      "video": "https://youtu.be/FEEMvQ9dau0",
       "description": "",
-      "link": "https://drive.google.com/file/d/1mDLeDljTit7EvUpewIK-WpcfkkCLX0VW/view",
+      "link": "https://youtu.be/FEEMvQ9dau0",
       "featured": false,
-      "aspectRatio": 0.562429696287964
+      "aspectRatio": 0.5625
     },
     {
       "title": "Talking Head 03",
       "category": "Talking Head",
       "tech": [],
-      "image": "/images/projects/thumbnails/1UYpBNZVeRVoaQaJY2AJhk1kiSbpnRpcF.jpg",
-      "video": "https://drive.google.com/file/d/1UYpBNZVeRVoaQaJY2AJhk1kiSbpnRpcF/preview",
+      "image": "https://i.ytimg.com/vi/bJzx_cb3wg4/hqdefault.jpg",
+      "video": "https://youtu.be/bJzx_cb3wg4",
       "description": "",
-      "link": "https://drive.google.com/file/d/1UYpBNZVeRVoaQaJY2AJhk1kiSbpnRpcF/view",
+      "link": "https://youtu.be/bJzx_cb3wg4",
       "featured": false,
-      "aspectRatio": 0.562429696287964
-    },
-    {
-      "title": "Talking Head 04",
-      "category": "Talking Head",
-      "tech": [],
-      "image": "/images/projects/thumbnails/1Qvh33BZjOUiTSREwYBy6ZMhCyOr4Rr9j.jpg",
-      "video": "https://drive.google.com/file/d/1Qvh33BZjOUiTSREwYBy6ZMhCyOr4Rr9j/preview",
-      "description": "",
-      "link": "https://drive.google.com/file/d/1Qvh33BZjOUiTSREwYBy6ZMhCyOr4Rr9j/view",
-      "featured": false,
-      "aspectRatio": 0.562429696287964
+      "aspectRatio": 0.5625
     },
     {
       "title": "Social Media Content 01",
