@@ -254,9 +254,7 @@
 
 /* Keep the original layout on a plain background. */
 .techstack-new { background: var(--backgroundColor); }
-/* Fixed page decorations must not show behind the toolkit. */
-body.toolkit-plain .landing-circle1,
-body.toolkit-plain .landing-circle2,
-body.toolkit-plain .cursor-main { visibility: hidden !important; opacity: 0 !important; }
-.techstack-new .techstack-item:hover { box-shadow: none; }
 
+/* Keep the page background; show tools without card panels. */
+.techstack-new .techstack-item,
+.techstack-new .techstack-item:hover { background: transparent; border-color: transparent; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
