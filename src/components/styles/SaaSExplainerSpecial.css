@@ -1,0 +1,33 @@
+.saas-special { width: min(1120px, calc(100% - 80px)); margin: 0 auto; padding: 100px 0 80px; scroll-margin-top: 100px; box-sizing: border-box; }
+.saas-special-header { max-width: 780px; margin-bottom: 40px; }
+.saas-special-eyebrow { color: var(--accentColor); font-size: 11px; letter-spacing: .2em; font-weight: 500; margin: 0 0 18px; }
+.saas-special-header h2 { font-size: clamp(32px, 4.5vw, 60px); line-height: 1.12; font-weight: 400; letter-spacing: -.035em; margin: 0 0 18px; color: #f4eef8; }
+.saas-special-header h2 span { color: var(--accentColor); }
+.saas-special-header > p:last-child { color: #aaa0b1; font-size: 15px; line-height: 1.6; margin: 0; }
+.saas-special-grid { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 24px; }
+.saas-special-card { grid-column: span 2; min-width: 0; border: 1px solid #ffffff1c; border-radius: 16px; overflow: hidden; background: #141017; transition: border-color .2s ease; }
+.saas-special-card:nth-child(-n+2) { grid-column: span 3; }
+.saas-special-card:hover { border-color: #c2a4ff70; }
+.saas-special .work-image { width: 100%; height: auto; max-width: none; margin: 0; }
+.saas-special .drive-play { border: 0; border-radius: 0; }
+.saas-special .drive-play img { object-fit: cover; }
+.saas-special .drive-play-label { font-size: 13px; padding: 10px 16px; }
+.saas-special-caption { display: flex; align-items: center; gap: 10px; padding: 18px 16px; }
+.saas-special-number { font-size: 11px; color: var(--accentColor); }
+.saas-special-caption h3 { font-size: 13px; font-weight: 500; line-height: 1.4; margin: 0; color: #eee8f2; }
+.saas-special-tag { margin-left: auto; font-size: 10px; color: #9b90a5; white-space: nowrap; }
+@media (max-width: 900px) {
+  .saas-special { width: calc(100% - 48px); padding: 72px 0 56px; }
+  .saas-special-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .saas-special-card, .saas-special-card:nth-child(-n+2) { grid-column: span 1; }
+  .saas-special-tag { display: none; }
+}
+@media (max-width: 600px) {
+  .saas-special { width: calc(100% - 40px); padding: 60px 0 40px; }
+  .saas-special-header { margin-bottom: 28px; }
+  .saas-special-header > p:last-child { font-size: 13px; }
+  .saas-special-grid { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .saas-special-caption { padding: 16px; }
+  .saas-special-tag { display: inline; }
+}
+@media (prefers-reduced-motion: reduce) { .saas-special-card { transition: none; } }

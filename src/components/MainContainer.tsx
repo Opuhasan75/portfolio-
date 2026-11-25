@@ -8,6 +8,7 @@ import Navbar from "./Navbar";
 import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
+import SaaSExplainerSpecial from "./SaaSExplainerSpecial";
 import TechStackNew from "./TechStackNew";
 import CallToAction from "./CallToAction";
 import setSplitText from "./utils/splitText";
@@ -79,6 +80,7 @@ const MainContainer = ({ children }: PropsWithChildren) => {
         <About />
         <WhatIDo />
         <Career />
+        <SaaSExplainerSpecial />
         <Work />
         <TechStackNew />
         <CallToAction />
